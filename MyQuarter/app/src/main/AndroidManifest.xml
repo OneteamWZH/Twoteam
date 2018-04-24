@@ -21,7 +21,9 @@
         <activity android:name=".ShareActivity" />
         <activity android:name=".Login_Activity" />
         <activity android:name=".ElseLogin_Activity" />
-        <activity android:name=".Reg_Activity"></activity>
+        <activity android:name=".Reg_Activity" />
+        <activity android:name=".WangjiPwdActivity" />
+        <activity android:name=".FinishActivity"></activity>
     </application>
 
 </manifest>
