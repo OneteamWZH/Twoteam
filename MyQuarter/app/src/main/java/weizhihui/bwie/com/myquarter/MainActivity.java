@@ -18,6 +18,8 @@ import com.hjm.bottomtabbar.BottomTabBar;
 import weizhihui.bwie.com.myquarter.Fragment.Fragment01;
 import weizhihui.bwie.com.myquarter.Fragment.Fragment02;
 import weizhihui.bwie.com.myquarter.Fragment.Fragment03;
+import weizhihui.bwie.com.myquarter.Fragment.Fragment04;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -62,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .addTabItem("", R.drawable.tuijian2, R.drawable.tuijian1, Fragment01.class)
                 .addTabItem("", R.drawable.duanzi2, R.drawable.duanzi1, Fragment02.class)
                 .addTabItem("", R.drawable.shipin2, R.drawable.shipin1, Fragment03.class)
+                .addTabItem("", R.drawable.duanzi1, R.drawable.duanzi1, Fragment04.class)
                 .isShowDivider(false)
                 .setOnTabChangeListener(new BottomTabBar.OnTabChangeListener() {
                     @Override
@@ -76,6 +79,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             case 2:
                                 mTitle.setText("视频");
                                 break;
+                            case 3:
+                                mTitle.setText("趣味");
+                                break;
+
                         }
                     }
                 });
