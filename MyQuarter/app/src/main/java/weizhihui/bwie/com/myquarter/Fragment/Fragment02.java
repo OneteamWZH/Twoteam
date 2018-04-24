@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import weizhihui.bwie.com.myquarter.R;
 
@@ -20,7 +21,8 @@ public class Fragment02 extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.duanzi,container,false);
-
-        return view;
+        TextView textView = new TextView(getActivity());
+        textView.setText("zheshilifangxinjiashangqudeha");
+        return textView;
     }
 }
