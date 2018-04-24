@@ -22,7 +22,7 @@ public class Fragment02 extends Fragment{
 
         View view = inflater.inflate(R.layout.duanzi,container,false);
         TextView textView = new TextView(getActivity());
-        textView.setText("zheshilifangxinjiashangqudeha");
+        textView.setText("zheshilifangxinjiashangqudeha9999999");
         return textView;
     }
 }
