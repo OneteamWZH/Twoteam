@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
            Intent intent=new Intent(MainActivity.this,AttentionActivity.class);
+                startActivity(intent);
             }
         });
         //点击我的收藏
