@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,54 +20,46 @@ import weizhihui.bwie.com.myquarter.presenter.Carousel_Presenter;
 import weizhihui.bwie.com.myquarter.view.Carousel_View;
 
 /**
- * Created by asus on 2018/4/16.
+ * Created by asus on 2018/4/25.
  */
 
-public class MainFragment extends Fragment implements Carousel_View{
+public class Frag_pager01 extends Fragment implements Carousel_View {
+
     private View view;
     private Banner mBannerid;
     private RecyclerView mRvframid;
     private List<String> listimg;
+    private List<Carousel_Bean.DataEntity> data;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.show1_mainfragment_layout, container, false);
-        initView(view);
+        View view = inflater.inflate(R.layout.frag_pager01, container, false);
 
-        Bundle arguments = getArguments();
-        String tab = arguments.getString("tab");
-        Log.d("tab",tab);
-        Carousel_Presenter presenter=new Carousel_Presenter(this);
+        Carousel_Presenter presenter = new Carousel_Presenter(this);
         presenter.getCarousel_Presenter();
-
-
-
+        initView(view);
         return view;
+    }
+
+    @Override
+    public void setCarousel_View(Carousel_Bean carousel_bean) {
+        data = carousel_bean.getData();
+        //热门轮播图
+        listimg = new ArrayList<>();
+        for (int i = 0; i < data.size(); i++) {
+            String icon = data.get(i).getIcon();
+            listimg.add(icon);
+        }
+        mBannerid.setImageLoader(new Img_Banner());
+        mBannerid.setImages(listimg);
+        mBannerid.setDelayTime(1000);
+        mBannerid.start();
+
     }
 
     private void initView(View view) {
         mBannerid = (Banner) view.findViewById(R.id.bannerid);
         mRvframid = (RecyclerView) view.findViewById(R.id.rvframid);
     }
-
-    @Override
-    public void setCarousel_View(Carousel_Bean carousel_bean) {
-        List<Carousel_Bean.DataEntity> data = carousel_bean.getData();
-        Log.d("ccccdata", data.size()+"");
-
-        listimg = new ArrayList<>();
-        for (int i = 0; i< data.size(); i++){
-            String icon = data.get(i).getIcon();
-            listimg.add(icon);
-        }
-        mBannerid.setImageLoader(new Img_Banner());
-        mBannerid.setImages(listimg);
-        Log.d("cccc",listimg.size()+"");
-        mBannerid.setDelayTime(1000);
-        mBannerid.start();
-
-    }
-    //数据响应成功的方法
-
 }
