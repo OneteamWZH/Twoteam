@@ -8,6 +8,6 @@ public class Api {
 
 
     //https://www.zhaoapi.cn/quarter/getAd    首页轮播
-    public static String Carousel_url = "https://www.zhaoapi.cn/quarter/";
+    public static final String Carousel_url = "https://www.zhaoapi.cn/quarter/";
 
 }

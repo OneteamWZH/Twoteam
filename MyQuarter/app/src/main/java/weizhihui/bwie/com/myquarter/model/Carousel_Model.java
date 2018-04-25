@@ -1,13 +1,14 @@
 package weizhihui.bwie.com.myquarter.model;
 
-import io.reactivex.Flowable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
-import io.reactivex.subscribers.DisposableSubscriber;
+import android.util.Log;
+
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-
+import rx.Observable;
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 import weizhihui.bwie.com.myquarter.api.Api;
 import weizhihui.bwie.com.myquarter.api.ApiService;
 import weizhihui.bwie.com.myquarter.bean.Carousel_Bean;
@@ -32,29 +33,30 @@ public class Carousel_Model {
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
+
         ApiService apiService = retrofit.create(ApiService.class);
-        Flowable<Carousel_Bean> carousel = apiService.getCarousel();
-         carousel.subscribeOn(Schedulers.io())
-                 .observeOn(AndroidSchedulers.mainThread())
-                 .subscribeWith(new DisposableSubscriber<Carousel_Bean>() {
-                     @Override
-                     public void onNext(Carousel_Bean carousel_bean) {
-                         if(carousel_listener!=null){
+        Log.d("url",Api.Carousel_url);
+        Observable<Carousel_Bean> observable = apiService.getCarousel();
+           observable.subscribeOn(Schedulers.io())
+                   .observeOn(AndroidSchedulers.mainThread())
+                   .subscribe(new Observer<Carousel_Bean>() {
+                       @Override
+                       public void onCompleted() {
 
-                             carousel_listener.setCarousel_Listener(carousel_bean);
-                         }
-                     }
+                       }
 
-                     @Override
-                     public void onError(Throwable t) {
+                       @Override
+                       public void onError(Throwable e) {
 
-                     }
+                       }
 
-                     @Override
-                     public void onComplete() {
-
-                     }
-                 });
+                       @Override
+                       public void onNext(Carousel_Bean carousel_bean) {
+                           if (carousel_listener!=null){
+                               carousel_listener.setCarousel_Listener(carousel_bean);
+                           }
+                       }
+                   });
 
     }
 
