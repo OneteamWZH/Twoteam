@@ -73,6 +73,13 @@ public class Fragment01 extends Fragment {
                 return tabs[position];
             }
         });
+
+
+
+
+
+
+
         return view;
     }
 
