@@ -18,9 +18,8 @@ public interface ApiService {
     //https://www.zhaoapi.cn/quarter/getAd    首页轮播
     @GET("getAd")
     Observable<Carousel_Bean> getCarousel();
-    //获取视频的url
-    //https://www.zhaoapi.cn/quarter/getJokes ?page=1&source=android&appVersion=0
-    @GET("quarter/getVideos")
-    Observable<ShiPinBean> getShiPin(@Query("page") String page,@Query("source") String android,@Query("appVersion") String appVersion,@Query("type") String type);
+    //获取热门视频的url
+    @GET("quarter/getHotVideos")
+    Observable<ShiPinBean> getShiPin(@Query("page") String page,@Query("source") String android,@Query("appVersion") String appVersion,@Query("token") String type);
 
 }
