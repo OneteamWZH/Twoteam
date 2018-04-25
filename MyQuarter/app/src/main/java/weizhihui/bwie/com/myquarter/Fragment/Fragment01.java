@@ -31,7 +31,6 @@ public class Fragment01 extends Fragment {
     private View view;
     private TabLayout mTabid;
     private ViewPager mPager;
-    private MainFragment mainFragment;
     private List<Fragment> fragmentList;
 
     @Nullable
@@ -45,6 +44,7 @@ public class Fragment01 extends Fragment {
             mTabid.addTab(mTabid.newTab().setText(tabs[i]));
         }
 
+        //使TabLayout的选中的线变短
         mTabid.post(new Runnable() {
             @Override
             public void run() {
@@ -52,15 +52,9 @@ public class Fragment01 extends Fragment {
             }
         });
 
-
         fragmentList = new ArrayList<>();
-        for (int i=0;i<tabs.length;i++){
-            mainFragment = new MainFragment();
-            Bundle bundle=new Bundle();
-            bundle.putString("tab",tabs[i]);
-            mainFragment.setArguments(bundle);
-            fragmentList.add(mainFragment);
-        }
+        fragmentList.add(new Frag_pager01());
+        fragmentList.add(new Frag_pager02());
         //viewpager添加适配器
         FragmentManager supportFragmentManager = getActivity().getSupportFragmentManager();
         mPager.setAdapter(new FragmentPagerAdapter(supportFragmentManager) {
@@ -88,6 +82,7 @@ public class Fragment01 extends Fragment {
         mPager = (ViewPager) view.findViewById(R.id.pager);
     }
 
+    //使TabLayout的选中的线变短
     public void setIndicator(TabLayout tabs, int leftDip, int rightDip) {
         Class<?> tabLayout = tabs.getClass();
         Field tabStrip = null;
