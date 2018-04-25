@@ -19,6 +19,7 @@
         android:layout_height="60dp"
         android:background="#1E90FF"
         android:orientation="horizontal"
+
         >
 
     <com.facebook.drawee.view.SimpleDraweeView
@@ -60,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/bar"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         ></com.hjm.bottomtabbar.BottomTabBar>
 
     </LinearLayout>

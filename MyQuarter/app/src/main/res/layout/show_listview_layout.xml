@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/raw_1499933216"
+        android:layout_below="@+id/Background_img"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:id="@+id/xin"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我的关注"
+        android:textSize="18dp"
+        android:layout_toRightOf="@+id/xin"
+        android:layout_alignBottom="@+id/xin"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/Guanzhu_id"
+        />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/jian1"
+        android:src="@drawable/raw_1499943790"
+        android:layout_toRightOf="@+id/Guanzhu_id"
+        android:layout_alignBottom="@+id/Guanzhu_id"
+        android:layout_marginLeft="150dp"
+        />
+</RelativeLayout>

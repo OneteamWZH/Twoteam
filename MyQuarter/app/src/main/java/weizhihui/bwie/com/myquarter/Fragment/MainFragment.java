@@ -24,44 +24,51 @@ import weizhihui.bwie.com.myquarter.view.Carousel_View;
  * Created by asus on 2018/4/16.
  */
 
-public class Frag_pager01 extends Fragment implements Carousel_View{
-
+public class MainFragment extends Fragment implements Carousel_View{
     private View view;
-    private Banner mBan;
-    private RecyclerView mRLV;
-    private String icon;
-    private List<String> list;
+    private Banner mBannerid;
+    private RecyclerView mRvframid;
+    private List<String> listimg;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_pager01, container, false);
+        View view = inflater.inflate(R.layout.show1_mainfragment_layout, container, false);
         initView(view);
-        list = new ArrayList<>();
 
-        Carousel_Presenter carousel_presenter = new Carousel_Presenter(this);
-        carousel_presenter.getCarousel_Presenter();
+        Bundle arguments = getArguments();
+        String tab = arguments.getString("tab");
+        Log.d("tab",tab);
+        Carousel_Presenter presenter=new Carousel_Presenter(this);
+        presenter.getCarousel_Presenter();
+
+
 
         return view;
     }
 
     private void initView(View view) {
-        mBan = (Banner) view.findViewById(R.id.Ban);
-        mRLV = (RecyclerView) view.findViewById(R.id.RLV);
+        mBannerid = (Banner) view.findViewById(R.id.bannerid);
+        mRvframid = (RecyclerView) view.findViewById(R.id.rvframid);
     }
 
     @Override
     public void setCarousel_View(Carousel_Bean carousel_bean) {
         List<Carousel_Bean.DataEntity> data = carousel_bean.getData();
-        for(int i=0;i<data.size();i++){
-            icon = data.get(i).getIcon();
-            list.add(icon);
+        Log.d("ccccdata", data.size()+"");
+
+        listimg = new ArrayList<>();
+        for (int i = 0; i< data.size(); i++){
+            String icon = data.get(i).getIcon();
+            listimg.add(icon);
         }
-        Log.i("哈哈",list.size()+"");
-        mBan.setImages(list);
-        mBan.setImageLoader(new Img_Banner());
-        mBan.setDelayTime(2000);
-        mBan.start();
+        mBannerid.setImageLoader(new Img_Banner());
+        mBannerid.setImages(listimg);
+        Log.d("cccc",listimg.size()+"");
+        mBannerid.setDelayTime(1000);
+        mBannerid.start();
 
     }
+    //数据响应成功的方法
+
 }

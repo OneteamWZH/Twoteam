@@ -1,39 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
 
     >
-
-    <RadioGroup
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabid"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:id="@+id/Group"
-        android:layout_weight="0.5"
-        android:orientation="horizontal"
-        >
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/btn1"
-            android:gravity="center"
-            android:button="@null"
-            android:text="热门"
-            android:layout_weight="1"
-            />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/btn2"
-            android:gravity="center"
-            android:button="@null"
-            android:text="关注"
-            android:layout_weight="1"
-            />
-
-    </RadioGroup>
+        android:layout_height="wrap_content"
+        app:tabMode="fixed"
+        app:tabIndicatorColor="#00BFFF"
+        app:tabIndicatorHeight="4sp"
+        app:tabTextAppearance="@android:style/TextAppearance.Large"
+        app:tabSelectedTextColor="#00BFFF"
+        />
 
     <android.support.v4.view.ViewPager
         android:layout_width="match_parent"
