@@ -39,8 +39,13 @@ public class Frag_pager01 extends Fragment implements Carousel_View {
         Carousel_Presenter presenter = new Carousel_Presenter(this);
         presenter.getCarousel_Presenter();
         initView(view);
+
+
+
         return view;
     }
+
+
 
     @Override
     public void setCarousel_View(Carousel_Bean carousel_bean) {

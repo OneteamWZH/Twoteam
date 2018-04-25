@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/hot_img"
+        fresco:roundAsCircle="true"
+        android:layout_marginLeft="30px"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="30px"
+        />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="#f00"
+        android:layout_toRightOf="@+id/hot_img"
+        android:layout_alignTop="@+id/hot_img"
+        android:layout_marginLeft="6px"
+        android:text="天蝎喝牛奶"
+        android:id="@+id/hou_name"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2017-05-23  14:25"
+        android:layout_below="@+id/hou_name"
+        android:layout_alignLeft="@+id/hou_name"
+        android:layout_marginTop="5px"
+        android:layout_marginLeft="10dp"
+        />
+    
+
+</RelativeLayout>
