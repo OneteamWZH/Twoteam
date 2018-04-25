@@ -32,6 +32,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * 推荐
      */
     private TextView mTitle;
+    /**
+     * 我的关注
+     */
+    private TextView mGuanzhuId;
+    /**
+     * 我的收藏
+     */
+    private TextView mShoucangId;
+    /**
+     * 搜索好友
+     */
+    private TextView mSousuoId;
+    /**
+     * 消息通知
+     */
+    private TextView mTongzhiId;
+    private ImageView mFolderId;
+    private ImageView mShezhiImg;
 
 
     @Override
@@ -67,8 +85,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setOnTabChangeListener(new BottomTabBar.OnTabChangeListener() {
                     @Override
                     public void onTabChange(int position, String name) {
-                        switch (position){
-                            case  0:
+                        switch (position) {
+                            case 0:
                                 mTitle.setText("推荐");
                                 break;
                             case 1:
@@ -84,8 +102,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 });
 
 
-
-
         //点击头像弹出侧拉菜单
         mSimpleId.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        //电解侧拉里面的头像跳转到登录页面
+        //点击侧拉里面的头像跳转到登录页面
         mSimpleClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +118,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(in);
             }
         });
+          //我的关注点击事件
+        mGuanzhuId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+           Intent intent=new Intent(MainActivity.this,AttentionActivity.class);
+                startActivity(intent);
+            }
+        });
+        //点击我的收藏
+        mShoucangId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
+        //点击搜索好友
+        mSousuoId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        //点击消息通知
+        mTongzhiId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        //点击我的作品
+       mFolderId.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+
+           }
+       });
+        //点击设置
+        mShezhiImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
     }
 
@@ -115,6 +173,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mLeft = (RelativeLayout) findViewById(R.id.left);
         mSimpleClick = (SimpleDraweeView) findViewById(R.id.Simple_click);
         mTitle = (TextView) findViewById(R.id.title);
+        mGuanzhuId = (TextView) findViewById(R.id.Guanzhu_id);
+        mShoucangId = (TextView) findViewById(R.id.Shoucang_id);
+        mSousuoId = (TextView) findViewById(R.id.Sousuo_id);
+        mTongzhiId = (TextView) findViewById(R.id.Tongzhi_id);
+        mFolderId = (ImageView) findViewById(R.id.Folder_id);
+        mShezhiImg = (ImageView) findViewById(R.id.Shezhi_img);
     }
 
     @Override

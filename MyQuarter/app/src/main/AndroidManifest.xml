@@ -23,7 +23,8 @@
         <activity android:name=".ElseLogin_Activity" />
         <activity android:name=".Reg_Activity" />
         <activity android:name=".WangjiPwdActivity" />
-        <activity android:name=".FinishActivity"></activity>
+        <activity android:name=".FinishActivity" />
+        <activity android:name=".AttentionActivity"></activity>
     </application>
 
 </manifest>
