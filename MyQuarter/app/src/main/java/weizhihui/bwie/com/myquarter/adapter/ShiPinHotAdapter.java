@@ -36,7 +36,7 @@ public class ShiPinHotAdapter extends RecyclerView.Adapter<ShiPinHotAdapter.MyVi
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Glide.with(context).load(data.get(position).getUser().getIcon()).into(holder.rv01img);
+      Glide.with(context).load(data.get(position).getUser().getIcon()).into(holder.rv01img);
     }
 
     @Override

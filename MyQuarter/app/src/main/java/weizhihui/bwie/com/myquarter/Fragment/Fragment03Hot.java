@@ -3,6 +3,7 @@ package weizhihui.bwie.com.myquarter.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
@@ -42,12 +43,13 @@ public class Fragment03Hot extends Fragment04 {
         hotsr01.setDirection(SwipyRefreshLayoutDirection.BOTH);
         StaggeredGridLayoutManager staggeredGridLayoutManager=new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         hotrv.setLayoutManager(staggeredGridLayoutManager);
+        hotrv.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
         shiPinPresenter=new ShiPinPresenter();
         shiPinPresenter.setShiPinDemo(page, "android", "1","1", new ShIPinIview() {
             @Override
             public void OnSuccess(ShiPinBean shiPinBean) {
-                data = shiPinBean.getData();
-                shiPinHotAdapter=new ShiPinHotAdapter(getActivity(),data);
+               data = shiPinBean.getData();
+                shiPinHotAdapter=new ShiPinHotAdapter(getActivity(), Fragment03Hot.this.data);
                 hotrv.setAdapter(shiPinHotAdapter);
             }
         });
