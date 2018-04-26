@@ -3,6 +3,8 @@
     package="weizhihui.bwie.com.myquarter">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".app.MyApp"
@@ -24,7 +26,8 @@
         <activity android:name=".Reg_Activity" />
         <activity android:name=".WangjiPwdActivity" />
         <activity android:name=".FinishActivity" />
-        <activity android:name=".AttentionActivity"></activity>
+        <activity android:name=".AttentionActivity" />
+        <activity android:name=".ShipinContent"></activity>
     </application>
 
 </manifest>

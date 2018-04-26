@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_shipin_content3"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="weizhihui.bwie.com.myquarter.ShipinContent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_marginTop="5dp"
+    android:layout_height="50dp">
+<ImageView
+    android:id="@+id/fanshi"
+   android:src="@drawable/raw_1500019926"
+    android:layout_width="35dp"
+    android:layout_marginLeft="15dp"
+    android:layout_height="35dp" />
+    <ImageView
+        android:id="@+id/like"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/xihuan"
+        android:src="@drawable/raw_1499933216"
+        />
+    <ImageView
+        android:id="@+id/nolike"
+        android:layout_width="35dp"
+        android:src="@drawable/raw_1499933217"
+        android:layout_marginLeft="15dp"
+        android:layout_height="35dp" />
+    <ImageView
+        android:id="@+id/zhuan"
+        android:layout_width="35dp"
+        android:src="@drawable/raw_1499995160"
+        android:layout_marginLeft="15dp"
+        android:layout_height="35dp" />
+    <ImageView
+        android:id="@+id/tt"
+        android:src="@drawable/touxiang"
+        android:layout_marginLeft="120dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp" />
+</LinearLayout>
+  <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
+      android:id="@+id/jc_video"
+      android:layout_width="match_parent"
+      android:layout_height="220dp"/>
+</LinearLayout>

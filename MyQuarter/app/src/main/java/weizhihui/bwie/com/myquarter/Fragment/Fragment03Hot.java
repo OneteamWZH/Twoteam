@@ -1,5 +1,6 @@
 package weizhihui.bwie.com.myquarter.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -16,6 +17,7 @@ import com.bawei.swiperefreshlayoutlibrary.SwipyRefreshLayoutDirection;
 import java.util.List;
 
 import weizhihui.bwie.com.myquarter.R;
+import weizhihui.bwie.com.myquarter.ShipinContent;
 import weizhihui.bwie.com.myquarter.adapter.ShiPinHotAdapter;
 import weizhihui.bwie.com.myquarter.bean.ShiPinBean;
 import weizhihui.bwie.com.myquarter.presenter.ShiPinPresenter;
@@ -98,6 +100,14 @@ public class Fragment03Hot extends Fragment04 {
           },1000);
            }
        });
+        //点击子条目跳转
+        /*shiPinHotAdapter.setOnItimeClickListener(new ShiPinHotAdapter.OnItimeClickListener() {
+            @Override
+            public void OnItimeClick(int position) {
+//                Intent intent=new Intent(getActivity(), ShipinContent.class);
+//                startActivity(intent);
+            }
+        });*/
         return view;
     }
 
