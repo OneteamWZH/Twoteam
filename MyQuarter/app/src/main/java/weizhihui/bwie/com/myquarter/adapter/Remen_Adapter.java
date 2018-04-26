@@ -114,12 +114,12 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
 
 
 
-                ObjectAnimator translationX = new ObjectAnimator().ofFloat(holder.jian,"translationX",-200f);
+                ObjectAnimator translationX = new ObjectAnimator().ofFloat(holder.jian,"translationX",-70f);
                 ObjectAnimator translationY = new ObjectAnimator().ofFloat(holder.jian,"translationY",0,0);
 
                 AnimatorSet animatorSet = new AnimatorSet();  //组合动画
                 animatorSet.playTogether(translationX,translationY); //设置动画
-                animatorSet.setDuration(3000);  //设置动画时间
+                animatorSet.setDuration(1000);  //设置动画时间
                 animatorSet.start(); //启动
 
 
