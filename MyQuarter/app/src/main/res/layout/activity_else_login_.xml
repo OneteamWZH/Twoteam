@@ -35,31 +35,56 @@
         android:layout_marginTop="70sp"
         android:src="@drawable/denglu"
         />
-    <!--android:background="#A9A9A9"-->
-    <LinearLayout
-        android:layout_width="270sp"
-        android:layout_height="120sp"
-        android:orientation="vertical"
-        android:layout_marginTop="60dp"
-        android:layout_below="@+id/loginimgid"
-        android:layout_centerHorizontal="true">
-        <EditText
-            android:id="@+id/telid"
-            android:layout_width="200sp"
-            android:layout_height="wrap_content"
-            android:hint="账号"
-            android:textColor="#fff"
-            android:textColorHint="#fff"
 
-            />
-        <EditText
-            android:id="@+id/pwdid"
-            android:layout_width="200sp"
-            android:layout_height="wrap_content"
-            android:hint="密码"
-            android:textColor="#fff"
-            android:textColorHint="#fff"
-            />
+    <LinearLayout
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/loginimgid"
+        android:id="@+id/linear"
+        android:background="@drawable/reg_login_back"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="账号"
+                android:textColor="#fff"
+                />
+            <EditText
+                android:textColor="#fff"
+                android:id="@+id/telid"
+                android:textCursorDrawable="@drawable/edit_color"
+                android:textColorHint="#fff"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="密码"
+                android:textColor="#fff"
+                />
+            <EditText
+                android:textColor="#fff"
+
+                android:id="@+id/pwdid"
+                android:textCursorDrawable="@drawable/edit_color"
+                android:textColorHint="#fff"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
     </LinearLayout>
     <Button
         android:id="@+id/elselogin2id"

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:background="#03A9F4"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+<TextView
+    android:layout_marginLeft="10dp"
+    android:textSize="18sp"
+    android:layout_centerVertical="true"
+    android:id="@+id/iconTou"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="取消"
+    android:textColor="#fff"/>
+ <TextView
+     android:layout_centerHorizontal="true"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_centerInParent="true"
+     android:textSize="18sp"
+     android:text="发表段子"
+     android:textColor="#fff"
+     android:id="@+id/title_top"
+     />
+    <TextView
+        android:textSize="18sp"
+        android:layout_centerVertical="true"
+        android:textColor="#fff"
+        android:id="@+id/publish_top"
+        android:text="发布"
+        android:padding="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
