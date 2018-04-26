@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16dp"
+        android:textSize="18dp"
         android:textColor="#f00"
         android:layout_toRightOf="@+id/hot_img"
         android:layout_alignTop="@+id/hot_img"
@@ -40,9 +40,12 @@
         android:layout_alignLeft="@+id/hou_name"
         android:layout_marginTop="5px"
         android:layout_marginLeft="10dp"
+
         android:id="@+id/hou_time"
 
+
         />
+    
 
         <TextView
             android:layout_width="wrap_content"
@@ -124,5 +127,7 @@
             android:layout_marginTop="10px"
             ></android.support.v7.widget.RecyclerView>
 
-    </RelativeLayout>
 
+
+
+</RelativeLayout>

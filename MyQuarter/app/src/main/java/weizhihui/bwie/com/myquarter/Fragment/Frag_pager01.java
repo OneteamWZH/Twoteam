@@ -40,31 +40,23 @@ public class Frag_pager01 extends Fragment implements Carousel_View,Remen_View {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_pager01, container, false);
-        initView(view);
 
-        //获取轮播图
         Carousel_Presenter presenter = new Carousel_Presenter(this);
         presenter.getCarousel_Presenter();
+        initView(view);
 
-        //获取视频
         Remen_Presenter remen_presenter = new Remen_Presenter(this);
-        remen_presenter.getRemen_presenter(2,1,1,"android",101);
+        remen_presenter.getRemen_presenter(1,1,1,"android",101);
 
 
         return view;
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-
     }
 
 
 
     @Override
     public void setCarousel_View(Carousel_Bean carousel_bean) {
-        data = carousel_bean.getData();
+        data =  carousel_bean.getData();
         //热门轮播图
         listimg = new ArrayList<>();
         for (int i = 0; i < data.size(); i++) {
@@ -84,13 +76,10 @@ public class Frag_pager01 extends Fragment implements Carousel_View,Remen_View {
         mRvframid.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 
-    //获取热门视频
     @Override
     public void setRemen_View(Remen_Bean remen_bean) {
-
         List<Remen_Bean.DataEntity> data = remen_bean.getData();
         Remen_Adapter remen_adapter = new Remen_Adapter(getActivity(), data);
         mRvframid.setAdapter(remen_adapter);
-
     }
 }

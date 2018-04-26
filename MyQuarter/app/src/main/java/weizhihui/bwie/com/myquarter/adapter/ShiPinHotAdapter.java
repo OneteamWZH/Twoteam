@@ -1,6 +1,7 @@
 package weizhihui.bwie.com.myquarter.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import weizhihui.bwie.com.myquarter.R;
+import weizhihui.bwie.com.myquarter.ShipinContent;
 import weizhihui.bwie.com.myquarter.bean.ShiPinBean;
 
 /**
@@ -21,6 +23,10 @@ import weizhihui.bwie.com.myquarter.bean.ShiPinBean;
 public class ShiPinHotAdapter extends RecyclerView.Adapter<ShiPinHotAdapter.MyViewHolder> {
     private Context context;
     private List<ShiPinBean.DataBean> data ;
+    /*private OnItimeClickListener mlistener;
+    public void setOnItimeClickListener(OnItimeClickListener onItimeClickListener){
+        mlistener=onItimeClickListener;
+    }*/
 
     public ShiPinHotAdapter(Context context, List<ShiPinBean.DataBean> data) {
         this.context = context;
@@ -30,13 +36,22 @@ public class ShiPinHotAdapter extends RecyclerView.Adapter<ShiPinHotAdapter.MyVi
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(context).inflate(R.layout.frag03rvchil01,parent,false);
-        MyViewHolder holder=new MyViewHolder(view);
+        final MyViewHolder holder=new MyViewHolder(view);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = holder.getLayoutPosition();
+                Intent intent=new Intent(context, ShipinContent.class);
+                intent.putExtra("video_url",data.get(position).getVideoUrl());
+                context.startActivity(intent);
+            }
+        });
         return holder;
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-      Glide.with(context).load(data.get(position).getUser().getIcon()).into(holder.rv01img);
+      Glide.with(context).load(data.get(position).getCover()).into(holder.rv01img);
     }
 
     @Override
@@ -51,4 +66,9 @@ public class ShiPinHotAdapter extends RecyclerView.Adapter<ShiPinHotAdapter.MyVi
             rv01img= (ImageView) itemView.findViewById(R.id.rv01img);
         }
     }
+    /*//点击事件
+    public interface OnItimeClickListener{
+        void OnItimeClick(int position);
+    }*/
+
 }
