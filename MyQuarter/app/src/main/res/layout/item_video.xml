@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/re_id"
+        >
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:layout_width="40dp"
@@ -17,7 +23,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:textSize="16dp"
         android:textColor="#f00"
         android:layout_toRightOf="@+id/hot_img"
         android:layout_alignTop="@+id/hot_img"
@@ -34,7 +40,47 @@
         android:layout_alignLeft="@+id/hou_name"
         android:layout_marginTop="5px"
         android:layout_marginLeft="10dp"
+        android:id="@+id/hou_time"
         />
-    
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hot_img"
+            android:layout_alignLeft="@+id/hot_img"
+            android:layout_marginTop="10px"
+            android:text="哈哈哈哈"
+            android:textSize="16dp"
+            android:id="@+id/hou_cotent"
+            />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/hot_pius"
+            fresco:roundAsCircle="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30px"
+            android:layout_marginRight="30px"
+
+            />
+
+        <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
+            android:id="@+id/jiecao_Player"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/hou_cotent"
+            android:layout_marginTop="20px"
+            ></fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard>
+
+    </RelativeLayout>
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/comment_RLV"
+            android:layout_below="@+id/re_id"
+            android:layout_marginTop="10px"
+            ></android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+
