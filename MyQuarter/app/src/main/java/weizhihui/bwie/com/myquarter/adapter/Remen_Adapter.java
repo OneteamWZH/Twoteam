@@ -14,7 +14,6 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
-import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 import weizhihui.bwie.com.myquarter.R;
 import weizhihui.bwie.com.myquarter.bean.Remen_Bean;
 
@@ -53,8 +52,8 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
         String createTime = dataEntity.getCreateTime();
 
         holder.name.setText(nickname);
-        holder.time.setText(createTime);
-        holder.cotent.setText("天气美美的，适合郊游");
+//        holder.time.setText(createTime);
+//        holder.cotent.setText("天气美美的，适合郊游");
 
         Uri uri = Uri.parse(icon);
         AbstractDraweeController build = Fresco.newDraweeControllerBuilder()
@@ -63,7 +62,7 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
                 .build();
         holder.img.setController(build);
 
-        holder.jiecao.setUp("http://gslb.miaopai.com/stream/ed5HCfnhovu3tyIQAiv60Q__.mp4",holder.jiecao.SCREEN_LAYOUT_NORMAL,"");
+//        holder.jiecao.setUp("http://gslb.miaopai.com/stream/ed5HCfnhovu3tyIQAiv60Q__.mp4",holder.jiecao.SCREEN_LAYOUT_NORMAL,"");
 
 
     }
@@ -83,21 +82,24 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
     public class Ada extends RecyclerView.ViewHolder{
 
         private final SimpleDraweeView img;
-        private final SimpleDraweeView pius;
+        private final TextView name;
+    /*    private final SimpleDraweeView pius;
         private final TextView name,time,cotent;
         private final JCVideoPlayerStandard jiecao;
-        private final RecyclerView comment;
+        private final RecyclerView comment;*/
 
         public Ada(View itemView) {
             super(itemView);
 
             img = (SimpleDraweeView) itemView.findViewById(R.id.hot_img);
-            pius = (SimpleDraweeView) itemView.findViewById(R.id.hot_pius);
+          /*  pius = (SimpleDraweeView) itemView.findViewById(R.id.hot_pius);*/
             name = (TextView) itemView.findViewById(R.id.hou_name);
+/*
             time = (TextView) itemView.findViewById(R.id.hou_time);
             cotent = (TextView) itemView.findViewById(R.id.hou_cotent);
             jiecao = (JCVideoPlayerStandard) itemView.findViewById(R.id.jiecao_Player);
             comment = (RecyclerView) itemView.findViewById(R.id.comment_RLV);
+*/
 
         }
     }

@@ -1,7 +1,6 @@
 package weizhihui.bwie.com.myquarter.adapter;
 
 import android.content.Context;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.facebook.drawee.backends.pipeline.Fresco;
-import com.facebook.drawee.controller.AbstractDraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
@@ -42,13 +39,13 @@ public class ShiPinDuanAdapter extends RecyclerView.Adapter<ShiPinDuanAdapter.My
     public void onBindViewHolder(MyViewHolder holder, int position) {
    holder.duanname.setText(data.get(position).getContent());
         holder.duanname1.setText(data.get(position).getCreateTime());
-        //Glide.with(context).load(data.get(position).getUser().getIcon()).into(holder.duantu);
-        Uri uri = Uri.parse(data.get(position).getUser().getIcon());
+        Glide.with(context).load(data.get(position).getUser().getIcon()).into(holder.duantu);
+ /*       Uri uri = Uri.parse(data.get(position).getUser().getIcon());
         AbstractDraweeController build = Fresco.newDraweeControllerBuilder()
                 .setUri(uri)
                 .setTapToRetryEnabled(true)
                 .build();
-        holder.duantu.setController(build);
+        holder.duantu.setController(build);*/
     }
 
     @Override

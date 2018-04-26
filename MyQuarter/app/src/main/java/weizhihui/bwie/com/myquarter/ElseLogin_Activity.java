@@ -27,7 +27,7 @@ public class ElseLogin_Activity extends BaseActivity implements LoginPresenter.L
     EditText mTelid;
 //    密码
     @BindView(R.id.pwdid)
-    Button mLogin;
+    EditText mPwdid;
 //    登陆
     @BindView(R.id.elselogin2id)
     Button mElselogin2id;
@@ -39,6 +39,7 @@ public class ElseLogin_Activity extends BaseActivity implements LoginPresenter.L
     TextView mYoukelogin;
 
     private LoginPresenter loginPresenter;
+    private ImageView mLoginimgid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +100,7 @@ public class ElseLogin_Activity extends BaseActivity implements LoginPresenter.L
 
     }
 
-    private void initView() {
+    public void initView() {
         mRegtelid = (TextView) findViewById(R.id.regtelid);
         mLoginimgid = (ImageView) findViewById(R.id.loginimgid);
         mTelid = (EditText) findViewById(R.id.telid);

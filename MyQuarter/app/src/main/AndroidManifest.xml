@@ -3,8 +3,7 @@
     package="weizhihui.bwie.com.myquarter">
 
     <uses-permission android:name="android.permission.INTERNET" />
-<<<<<<< HEAD
-=======
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
@@ -22,8 +21,6 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
->>>>>>> 015563a67bd0a7a276ebd93003580c10598da480
->>>>>>> 67729047d847fb942344a119a2dc42918c8446c2
 
     <application
         android:name=".app.MyApp"
@@ -46,16 +43,16 @@
         <activity android:name=".WangjiPwdActivity" />
         <activity android:name=".FinishActivity" />
         <activity android:name=".AttentionActivity" />
-<<<<<<< HEAD
+
         <activity android:name=".VideoActivity" />
         <activity android:name=".DuanZiActivity" />
-=======
+
         <activity android:name=".ShipinContent"></activity>
         <activity android:name=".AttentionActivity"></activity>
         <activity android:name=".JieCaoVideoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"></activity>
->>>>>>> 67729047d847fb942344a119a2dc42918c8446c2
+
     </application>
 
 </manifest>
