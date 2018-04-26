@@ -40,7 +40,7 @@
     <ImageView
         android:id="@+id/tt"
         android:src="@drawable/touxiang"
-        android:layout_marginLeft="120dp"
+        android:layout_marginLeft="160dp"
         android:layout_width="35dp"
         android:layout_height="35dp" />
 </LinearLayout>
@@ -48,4 +48,8 @@
       android:id="@+id/jc_video"
       android:layout_width="match_parent"
       android:layout_height="220dp"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/duanrv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>

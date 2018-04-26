@@ -2,23 +2,40 @@ package weizhihui.bwie.com.myquarter;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.List;
+
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
+import weizhihui.bwie.com.myquarter.adapter.ShiPinDuanAdapter;
+import weizhihui.bwie.com.myquarter.bean.ShipinDuanBean;
+import weizhihui.bwie.com.myquarter.presenter.ShiPinDuanPresenter;
+import weizhihui.bwie.com.myquarter.view.IView.ShiPinDuanIview;
 
 import static android.R.attr.name;
 
 public class ShipinContent extends AppCompatActivity {
     JCVideoPlayerStandard jcVideoPlayerStandard ;
    private ImageView fanshi;
+    private ShiPinDuanPresenter shiPinDuanPresenter;
+    private RecyclerView duanrv;
+    private List<ShipinDuanBean.DataBean> data;
+    private ShiPinDuanAdapter shiPinDuanAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shipin_content);
         fanshi= (ImageView) findViewById(R.id.fanshi);
+        duanrv= (RecyclerView) findViewById(R.id.duanrv);
+        //布局管理器
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
+        duanrv.setLayoutManager(linearLayoutManager);
+
         //点击返回
         fanshi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +62,16 @@ public class ShipinContent extends AppCompatActivity {
 //                JCPlayerActivity.this.finish(); // 结束当前界面
 //            }
 //        });
+        //段子类表
+        shiPinDuanPresenter=new ShiPinDuanPresenter();
+        shiPinDuanPresenter.ShiDuanDemo("1", "android", "1", new ShiPinDuanIview() {
+            @Override
+            public void OnSuccess(ShipinDuanBean shipinDuanBean) {
+                 data = shipinDuanBean.getData();
+                shiPinDuanAdapter=new ShiPinDuanAdapter(ShipinContent.this,data);
+                duanrv.setAdapter(shiPinDuanAdapter);
+            }
+        });
     }
 
     @Override

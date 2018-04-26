@@ -75,11 +75,12 @@ public class ElseLogin_Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+            //点击注册账号  跳转到注册页面
         mRegtelid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+            Intent intent=new Intent(ElseLogin_Activity.this,Reg_Activity.class);
+                startActivity(intent);
             }
         });
     }
