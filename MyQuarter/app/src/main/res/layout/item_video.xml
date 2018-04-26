@@ -41,6 +41,7 @@
         android:layout_marginTop="5px"
         android:layout_marginLeft="10dp"
         android:id="@+id/hou_time"
+
         />
 
         <TextView
@@ -54,6 +55,7 @@
             android:id="@+id/hou_cotent"
             />
 
+
         <com.facebook.drawee.view.SimpleDraweeView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -62,7 +64,47 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="30px"
             android:layout_marginRight="30px"
+            android:visibility="visible"
+            />
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/jian"
+            fresco:roundAsCircle="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30px"
+            android:layout_marginRight="30px"
 
+            />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/jubao"
+            fresco:roundAsCircle="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30px"
+            android:layout_marginRight="30px"
+            />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/fuzhi"
+            fresco:roundAsCircle="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30px"
+            android:layout_marginRight="30px"
+            />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/pingbi"
+            fresco:roundAsCircle="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30px"
+            android:layout_marginRight="30px"
             />
 
         <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
