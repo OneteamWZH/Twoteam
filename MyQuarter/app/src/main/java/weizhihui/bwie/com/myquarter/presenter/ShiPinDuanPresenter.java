@@ -2,7 +2,7 @@ package weizhihui.bwie.com.myquarter.presenter;
 
 import weizhihui.bwie.com.myquarter.bean.ShipinDuanBean;
 import weizhihui.bwie.com.myquarter.model.ShiPinDuanModel;
-import weizhihui.bwie.com.myquarter.view.IView.ShiPinDuanIview;
+import weizhihui.bwie.com.myquarter.view.ShiPinDuanIview;
 
 /**
  * Created by lenovo on 2018/4/26.

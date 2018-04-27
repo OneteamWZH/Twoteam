@@ -27,7 +27,6 @@ import weizhihui.bwie.com.myquarter.bean.ShipinDuanBean;
 import weizhihui.bwie.com.myquarter.presenter.DuanPresenter;
 import weizhihui.bwie.com.myquarter.presenter.ShiPinDuanPresenter;
 import weizhihui.bwie.com.myquarter.view.IView.DuanIview;
-import weizhihui.bwie.com.myquarter.view.IView.ShiPinDuanIview;
 
 import static android.R.attr.name;
 
