@@ -1,4 +1,4 @@
-package weizhihui.bwie.com.myquarter.view.IView;
+package weizhihui.bwie.com.myquarter.view;
 
 import weizhihui.bwie.com.myquarter.bean.ShiPinBean;
 

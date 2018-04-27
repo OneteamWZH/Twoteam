@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/re_id"
+        >
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/duan_img"
+            android:layout_marginLeft="30px"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="30px"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textColor="#f00"
+            android:layout_toRightOf="@+id/duan_img"
+            android:layout_alignTop="@+id/duan_img"
+            android:layout_marginLeft="6px"
+            android:text="天蝎喝牛奶"
+            android:id="@+id/duann_name"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2017-05-23  14:25"
+            android:layout_below="@+id/duann_name"
+            android:layout_alignLeft="@+id/duann_name"
+            android:layout_marginTop="5px"
+            android:layout_marginLeft="10dp"
+
+            android:id="@+id/duan_time"
+
+
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/duan_img"
+            android:layout_alignLeft="@+id/duan_img"
+            android:layout_marginTop="10px"
+            android:text="哈哈哈哈"
+            android:textSize="16dp"
+            android:textColor="@color/colorAccent"
+            android:id="@+id/duan_cotent"
+            />
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/hot_pius01"
+            fresco:roundAsCircle="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30px"
+            android:layout_marginRight="30px"
+            android:visibility="visible"
+            />
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/jian"
+            fresco:roundAsCircle="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30px"
+            android:layout_marginRight="30px"
+            android:visibility="gone"
+            />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/jubao01"
+            fresco:roundAsCircle="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30px"
+            android:layout_marginRight="30px"
+            android:visibility="gone"
+            />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/fuzhi01"
+            fresco:roundAsCircle="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30px"
+            android:layout_marginRight="30px"
+            android:visibility="gone"
+            />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/pingbi01"
+            fresco:roundAsCircle="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30px"
+            android:layout_marginRight="30px"
+            android:visibility="gone"
+            />
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,6 +1,5 @@
 package weizhihui.bwie.com.myquarter.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -17,11 +16,10 @@ import com.bawei.swiperefreshlayoutlibrary.SwipyRefreshLayoutDirection;
 import java.util.List;
 
 import weizhihui.bwie.com.myquarter.R;
-import weizhihui.bwie.com.myquarter.ShipinContent;
 import weizhihui.bwie.com.myquarter.adapter.ShiPinHotAdapter;
 import weizhihui.bwie.com.myquarter.bean.ShiPinBean;
 import weizhihui.bwie.com.myquarter.presenter.ShiPinPresenter;
-import weizhihui.bwie.com.myquarter.view.IView.ShIPinIview;
+import weizhihui.bwie.com.myquarter.view.ShIPinIview;
 
 /**
  * Created by lenovo on 2018/4/25.
@@ -45,7 +43,7 @@ public class Fragment03Hot extends Fragment04 {
         hotsr01.setDirection(SwipyRefreshLayoutDirection.BOTH);
         StaggeredGridLayoutManager staggeredGridLayoutManager=new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         hotrv.setLayoutManager(staggeredGridLayoutManager);
-        hotrv.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
+       // hotrv.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
         shiPinPresenter=new ShiPinPresenter();
         shiPinPresenter.setShiPinDemo(page, "android", "1","1", new ShIPinIview() {
             @Override
