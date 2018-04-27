@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_my_collection"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:orientation="vertical"
+    tools:context="weizhihui.bwie.com.myquarter.MyCollectionActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#03A9F4"
+        >
+        <ImageView
+            android:id="@+id/update_top"
+            android:src="@drawable/browse_back"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            />
+        <TextView
+            android:textColor="#fff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/update_top"
+            android:layout_marginLeft="6sp"
+            android:layout_centerInParent="true"
+            android:textSize="18sp"
+            android:text="返回"
+            />
+
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="18sp"
+        android:text="我的收藏"
+        android:layout_centerVertical="true"
+        android:textColor="#fff"
+        />
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textSize="18sp"
+            android:text="删除"
+            android:layout_centerVertical="true"
+            android:textColor="#fff"
+            android:layout_marginRight="15sp"
+            android:id="@+id/deleteid"
+            />
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/MCrvid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

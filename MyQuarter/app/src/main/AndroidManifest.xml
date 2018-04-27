@@ -49,7 +49,12 @@
             android:name=".JieCaoVideoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
-        <activity android:name=".ChildAttentionActivity"></activity>
+        <activity android:name=".ChildAttentionActivity" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".MyWorksActivity" />
+        <activity android:name=".MessageActivity" />
+        <activity android:name=".SearchFriendsActivity" />
+        <activity android:name=".MyCollectionActivity"></activity>
     </application>
 
 </manifest>
