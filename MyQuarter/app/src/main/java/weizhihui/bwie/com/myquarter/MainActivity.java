@@ -130,34 +130,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mShoucangId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(MainActivity.this,MyCollectionActivity.class);
+                startActivity(intent);
             }
         });
         //点击搜索好友
         mSousuoId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(MainActivity.this,SettingActivity.class);
+                startActivity(intent);
             }
         });
         //点击消息通知
         mTongzhiId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(MainActivity.this,MessageActivity.class);
+                startActivity(intent);
             }
         });
         //点击我的作品
        mFolderId.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-
+               Intent intent=new Intent(MainActivity.this,MyWorksActivity.class);
+               startActivity(intent);
            }
        });
         //点击设置
         mShezhiImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,SettingActivity.class);
+                startActivity(intent);
 
             }
         });

@@ -9,10 +9,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import butterknife.BindView;
 import weizhihui.bwie.com.myquarter.presenter.LoginPresenter;
-
-public class ElseLogin_Activity extends BaseActivity implements LoginPresenter.LoginPresenterListener {
+//  账号密码登录界面
+public class ElseLogin_Activity extends BaseActivity  implements LoginPresenter.LoginPresenterListener{
 
 
 
@@ -27,7 +30,11 @@ public class ElseLogin_Activity extends BaseActivity implements LoginPresenter.L
     EditText mTelid;
 //    密码
     @BindView(R.id.pwdid)
+
+    EditText mPwdid;
+
      EditText pwdid;
+
 //    登陆
     @BindView(R.id.elselogin2id)
     Button mElselogin2id;
@@ -39,6 +46,7 @@ public class ElseLogin_Activity extends BaseActivity implements LoginPresenter.L
     TextView mYoukelogin;
 
     private LoginPresenter loginPresenter;
+    private ImageView mLoginimgid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,14 +60,38 @@ public class ElseLogin_Activity extends BaseActivity implements LoginPresenter.L
                 finish();
             }
         });
-        //点击登录   游客登录  跳转到推荐页面
+        //  登陆按钮 点击进入展示主界面
         mElselogin2id.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ElseLogin_Activity.this, MainActivity.class);
-                startActivity(intent);
+                Map<String,String> params = new HashMap<>();
+
+                params.put("mobile",mTelid.getText().toString().trim());
+                params.put("password",mPwdid.getText().toString().trim());
+                loginPresenter.getData(params);
+
+                    new LoginPresenter(new LoginPresenter.LoginPresenterListener() {
+                        @Override
+                        public void success(String s) {
+                            if(("登录成功").equals(s)){
+                                Toast.makeText(ElseLogin_Activity.this, s, Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(ElseLogin_Activity.this, MainActivity.class);
+                                startActivity(intent);
+                            }else{
+                                Toast.makeText(ElseLogin_Activity.this, s, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+              /*  }*/
+
+
+
+
+             /*   Intent intent = new Intent(ElseLogin_Activity.this, MainActivity.class);
+                startActivity(intent);*/
             }
         });
+        //点击登录   游客登录  跳转到推荐页面
         mYoukelogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,7 +103,7 @@ public class ElseLogin_Activity extends BaseActivity implements LoginPresenter.L
         mWangjipwdid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ElseLogin_Activity.this, WangjiPwdActivity.class);
+                Intent intent = new Intent(ElseLogin_Activity.this, ForgetActivity.class);
                 startActivity(intent);
             }
         });
@@ -79,7 +111,8 @@ public class ElseLogin_Activity extends BaseActivity implements LoginPresenter.L
         mRegtelid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(ElseLogin_Activity.this, Reg_Activity.class);
+                startActivity(intent);
             }
         });
     }
@@ -113,17 +146,17 @@ public class ElseLogin_Activity extends BaseActivity implements LoginPresenter.L
 
     @Override
     protected void initData() {
-        loginPresenter = new LoginPresenter(this);
-    }
 
+        loginPresenter = new LoginPresenter(this);
+
+    }
     @Override
     public void success(String s) {
         if(("登录成功").equals(s)){
-            Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(ElseLogin_Activity.this, MainActivity.class);
-            startActivity(intent);
+            showShort(s);
+            openActivity(MainActivity.class);
         }else{
-            Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+            showShort(s);
         }
     }
     @Override

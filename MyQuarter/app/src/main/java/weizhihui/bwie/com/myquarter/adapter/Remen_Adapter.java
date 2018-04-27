@@ -4,10 +4,12 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.net.Uri;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
@@ -20,6 +22,7 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 import weizhihui.bwie.com.myquarter.R;
 import weizhihui.bwie.com.myquarter.bean.Remen_Bean;
 
+
 /**
  * Created by asus on 2018/4/26.
  */
@@ -28,6 +31,7 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
 
     private Context context;
     private List<Remen_Bean.DataEntity> list;
+    private Ada a;
 
     public Remen_Adapter(Context context, List<Remen_Bean.DataEntity> list) {
         this.context = context;
@@ -38,7 +42,7 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
     public Remen_Adapter.Ada onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View inflate = LayoutInflater.from(context).inflate(R.layout.item_video, parent, false);
-        Ada a = new Ada(inflate);
+        a = new Ada(inflate);
 
         return a;
     }
@@ -54,10 +58,24 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
         String nickname = (String) user.getNickname();
         String createTime = dataEntity.getCreateTime();
 
+
         holder.name.setText(nickname);
+
+//        holder.time.setText(createTime);
+//        holder.cotent.setText("天气美美的，适合郊游");
+
+        if(nickname!=null){
+            holder.name.setText(nickname);
+        }else{
+            holder.name.setText("天王盖地虎");
+        }
+
+
+
         holder.time.setText(createTime);
         holder.cotent.setText("天气美美的，适合郊游");
         holder.jiecao.setUp("http://gslb.miaopai.com/stream/ed5HCfnhovu3tyIQAiv60Q__.mp4",holder.jiecao.SCREEN_LAYOUT_NORMAL,"");
+
 
         Uri uri = Uri.parse(icon);
         AbstractDraweeController build = Fresco.newDraweeControllerBuilder()
@@ -65,6 +83,9 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
                 .setTapToRetryEnabled(true)
                 .build();
         holder.img.setController(build);
+
+
+//        holder.jiecao.setUp("http://gslb.miaopai.com/stream/ed5HCfnhovu3tyIQAiv60Q__.mp4",holder.jiecao.SCREEN_LAYOUT_NORMAL,"");
 
         Uri uri5 = Uri.parse("res:///" + R.drawable.pingbi);
         AbstractDraweeController build5 = Fresco.newDraweeControllerBuilder()
@@ -79,6 +100,7 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
                 .setTapToRetryEnabled(true)
                 .build();
         holder.fuzhi.setController(build4);
+
 
         Uri uri3 = Uri.parse("res:///" + R.drawable.jubao);
         AbstractDraweeController build3 = Fresco.newDraweeControllerBuilder()
@@ -108,9 +130,7 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
             public void onClick(View v) {
                 holder.pius.setVisibility(View.GONE);
                 holder.jian.setVisibility(View.VISIBLE);
-//                holder.jubao.setVisibility(View.VISIBLE);
-//                holder.fuzhi.setVisibility(View.VISIBLE);
-//                holder.pingbi.setVisibility(View.VISIBLE);
+
 
                 //加号
                 ObjectAnimator ra = ObjectAnimator.ofFloat(holder.pius,"rotation", 0f, 360f);
@@ -170,9 +190,6 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
             public void onClick(View v) {
                 holder.pius.setVisibility(View.VISIBLE);
                 holder.jian.setVisibility(View.GONE);
-//                holder.jubao.setVisibility(View.GONE);
-//                holder.fuzhi.setVisibility(View.GONE);
-//                holder.pingbi.setVisibility(View.GONE);
 
                 //屏蔽
                 ObjectAnimator translationX3 = new ObjectAnimator().ofFloat(holder.pingbi,"translationX",-70f,0f);
@@ -224,6 +241,68 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
             }
         });
 
+        holder.comment.setLayoutManager(new LinearLayoutManager(context));
+        Comment_Adapter comment_adapter = new Comment_Adapter(context,list);
+        holder.comment.setAdapter(comment_adapter);
+
+        holder.xin1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.xin2.setVisibility(View.VISIBLE);
+                holder.xin1.setVisibility(View.INVISIBLE);
+                String num = holder.num.getText().toString();
+                int i = Integer.parseInt(num);
+                i++;
+                holder.num.setText(i+"");
+
+
+            }
+        });
+        holder.xin2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.xin1.setVisibility(View.VISIBLE);
+                holder.xin2.setVisibility(View.INVISIBLE);
+                String num = holder.num.getText().toString();
+                int i = Integer.parseInt(num);
+                i--;
+                holder.num.setText(i+"");
+            }
+        });
+        holder.wujiaoxing1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.wujiaoxing1.setVisibility(View.INVISIBLE);
+                holder.wujiaoxing2.setVisibility(View.VISIBLE);
+                String num_wujiaoxing = holder.num_wujiaoxing.getText().toString();
+                int i = Integer.parseInt(num_wujiaoxing);
+                i++;
+                holder.num_wujiaoxing.setText(i+"");
+
+            }
+        });
+        holder.wujiaoxing2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.wujiaoxing2.setVisibility(View.INVISIBLE);
+                holder.wujiaoxing1.setVisibility(View.VISIBLE);
+                String num_wujiaoxing = holder.num_wujiaoxing.getText().toString();
+                int i = Integer.parseInt(num_wujiaoxing);
+                i--;
+                holder.num_wujiaoxing.setText(i+"");
+            }
+        });
+
+
+        holder.zhuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+
+
 
     }
 
@@ -237,29 +316,50 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
 
     }
 
+
+
     public class Ada extends RecyclerView.ViewHolder{
 
         private final SimpleDraweeView img;
         private final SimpleDraweeView pius,jian,fuzhi,pingbi,jubao;
-        private final TextView name,time,cotent;
+        private final TextView name,time,cotent,num,num_zhuna,num_wujiaoxing;
         private final JCVideoPlayerStandard jiecao;
         private final RecyclerView comment;
+        private final ImageView xin1,xin2,wujiaoxing1,wujiaoxing2,zhuan,pinglu;
 
         public Ada(View itemView) {
             super(itemView);
 
             img = (SimpleDraweeView) itemView.findViewById(R.id.hot_img);
+
+          /*  pius = (SimpleDraweeView) itemView.findViewById(R.id.hot_pius);*/
+
             pius = (SimpleDraweeView) itemView.findViewById(R.id.hot_pius);
             jian = (SimpleDraweeView) itemView.findViewById(R.id.jian);
             jubao = (SimpleDraweeView) itemView.findViewById(R.id.jubao);
             fuzhi = (SimpleDraweeView) itemView.findViewById(R.id.fuzhi);
             pingbi = (SimpleDraweeView) itemView.findViewById(R.id.pingbi);
+
             name = (TextView) itemView.findViewById(R.id.hou_name);
             time = (TextView) itemView.findViewById(R.id.hou_time);
             cotent = (TextView) itemView.findViewById(R.id.hou_cotent);
             jiecao = (JCVideoPlayerStandard) itemView.findViewById(R.id.jiecao_Player);
             comment = (RecyclerView) itemView.findViewById(R.id.comment_RLV);
+            xin1 = (ImageView) itemView.findViewById(R.id.xin1);
+            xin2 = (ImageView) itemView.findViewById(R.id.xin2);
+            wujiaoxing1 = (ImageView) itemView.findViewById(R.id.wujiaoxing1);
+            wujiaoxing2 = (ImageView) itemView.findViewById(R.id.wujiaoxing2);
+            zhuan = (ImageView) itemView.findViewById(R.id.zhuan);
+            pinglu = (ImageView) itemView.findViewById(R.id.pinglun);
+            num = (TextView) itemView.findViewById(R.id.num);
+            num_zhuna = (TextView) itemView.findViewById(R.id.num_zhuan);
+            num_wujiaoxing = (TextView) itemView.findViewById(R.id.num_wujiaoxing);
+
+
 
         }
     }
+
+
+
 }

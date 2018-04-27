@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -43,13 +44,12 @@
         <activity android:name=".Login_Activity" />
         <activity android:name=".ElseLogin_Activity" />
         <activity android:name=".Reg_Activity" />
-        <activity android:name=".WangjiPwdActivity" />
         <activity android:name=".FinishActivity" />
         <activity android:name=".AttentionActivity" />
         <activity android:name=".VideoActivity" />
         <activity android:name=".DuanZiActivity" />
         <activity android:name=".ShipinContent" />
-        <activity android:name=".AttentionActivity" />
+        <activity android:name=".ShiPinOver"/>
         <activity
             android:name=".JieCaoVideoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
@@ -105,9 +105,11 @@
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="Channel ID" />
-        android:screenOrientation="portrait" />
+
         <activity android:name=".ChildAttentionActivity" />
-        <activity android:name=".ShiPinOver"></activity>
+        <activity android:name=".AttentionActivity$AttentionActivity" />
+
+
     </application>
 
 </manifest>

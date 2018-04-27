@@ -113,13 +113,119 @@
             android:alpha="0"
             />
 
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hou_cotent"
+            android:background="#000000"
+            >
+
         <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
             android:id="@+id/jiecao_Player"
-            android:layout_width="match_parent"
+            android:layout_width="665px"
             android:layout_height="200dp"
-            android:layout_below="@+id/hou_cotent"
             android:layout_marginTop="20px"
             ></fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/xin1"
+            android:layout_toRightOf="@+id/jiecao_Player"
+            android:layout_alignTop="@+id/jiecao_Player"
+
+            android:id="@+id/xin1"
+            />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/xin2"
+                android:layout_toRightOf="@+id/jiecao_Player"
+                android:layout_alignTop="@+id/jiecao_Player"
+                android:id="@+id/xin2"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/num"
+                android:text="1563"
+                android:layout_below="@+id/xin1"
+                android:layout_alignLeft="@+id/xin1"
+                android:layout_marginTop="2dp"
+                android:textColor="#FFFAF0"
+                />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/wujiaoxin1"
+                android:layout_below="@+id/num"
+                android:layout_alignLeft="@+id/num"
+                android:layout_marginTop="2dp"
+                android:id="@+id/wujiaoxing1"
+                />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/wujiaoxing2"
+                android:layout_below="@+id/num"
+                android:layout_alignLeft="@+id/num"
+                android:layout_marginTop="2dp"
+                android:id="@+id/wujiaoxing2"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/num_wujiaoxing"
+                android:layout_below="@+id/wujiaoxing1"
+                android:layout_marginTop="2dp"
+                android:text="655"
+                android:layout_marginLeft="1px"
+                android:textColor="#fff"
+                android:layout_alignLeft="@+id/wujiaoxing1"
+                />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/zhuan"
+                android:layout_below="@+id/num_wujiaoxing"
+                android:layout_marginTop="2dp"
+                android:layout_alignLeft="@+id/wujiaoxing1"
+                android:id="@+id/zhuan"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="503"
+                android:textColor="#fff"
+                android:id="@+id/num_zhuan"
+                android:layout_below="@+id/zhuan"
+                android:layout_marginTop="2dp"
+                android:layout_alignLeft="@+id/zhuan"
+
+                />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/num_zhuan"
+                android:layout_alignLeft="@+id/num_zhuan"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/pinglun"
+                android:id="@+id/pinglun"
+                />
+
+
+        </RelativeLayout>
 
     </RelativeLayout>
         <android.support.v7.widget.RecyclerView
@@ -129,7 +235,13 @@
             android:layout_below="@+id/re_id"
             android:layout_marginTop="10px"
             ></android.support.v7.widget.RecyclerView>
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#44000000"
+        android:layout_below="@+id/comment_RLV"
+        android:layout_marginTop="20px"
+        />
 
 
 
