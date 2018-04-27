@@ -27,7 +27,7 @@ public class ElseLogin_Activity extends BaseActivity implements LoginPresenter.L
     EditText mTelid;
 //    密码
     @BindView(R.id.pwdid)
-    Button mLogin;
+     EditText pwdid;
 //    登陆
     @BindView(R.id.elselogin2id)
     Button mElselogin2id;

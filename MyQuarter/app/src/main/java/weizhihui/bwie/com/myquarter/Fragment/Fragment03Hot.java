@@ -45,7 +45,7 @@ public class Fragment03Hot extends Fragment04 {
         hotsr01.setDirection(SwipyRefreshLayoutDirection.BOTH);
         StaggeredGridLayoutManager staggeredGridLayoutManager=new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         hotrv.setLayoutManager(staggeredGridLayoutManager);
-        hotrv.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
+       // hotrv.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
         shiPinPresenter=new ShiPinPresenter();
         shiPinPresenter.setShiPinDemo(page, "android", "1","1", new ShIPinIview() {
             @Override
