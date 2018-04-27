@@ -55,19 +55,19 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
         String nickname = (String) user.getNickname();
         String createTime = dataEntity.getCreateTime();
 
-<<<<<<< HEAD
+
         holder.name.setText(nickname);
 
 //        holder.time.setText(createTime);
 //        holder.cotent.setText("天气美美的，适合郊游");
-=======
+
         if(nickname!=null){
             holder.name.setText(nickname);
         }else{
             holder.name.setText("天王盖地虎");
         }
 
->>>>>>> 509686d4cea21770c646858d6d0b8c384b9f9166
+
 
         holder.time.setText(createTime);
         holder.cotent.setText("天气美美的，适合郊游");
