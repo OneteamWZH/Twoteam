@@ -108,26 +108,121 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
             public void onClick(View v) {
                 holder.pius.setVisibility(View.GONE);
                 holder.jian.setVisibility(View.VISIBLE);
-                holder.jubao.setVisibility(View.VISIBLE);
-                holder.fuzhi.setVisibility(View.VISIBLE);
-                holder.pingbi.setVisibility(View.VISIBLE);
+//                holder.jubao.setVisibility(View.VISIBLE);
+//                holder.fuzhi.setVisibility(View.VISIBLE);
+//                holder.pingbi.setVisibility(View.VISIBLE);
 
+                //加号
+                ObjectAnimator ra = ObjectAnimator.ofFloat(holder.pius,"rotation", 0f, 360f);
+                ra.setDuration(1000);
+                ra.start();
 
-
-                ObjectAnimator translationX = new ObjectAnimator().ofFloat(holder.jian,"translationX",-70f);
-                ObjectAnimator translationY = new ObjectAnimator().ofFloat(holder.jian,"translationY",0,0);
-
+                //举报
+                ObjectAnimator translationX = new ObjectAnimator().ofFloat(holder.jubao,"translationX",0,-70f);
+                ObjectAnimator translationY = new ObjectAnimator().ofFloat(holder.jubao,"translationY",0,0);
+                ObjectAnimator animator1 = ObjectAnimator.ofFloat(holder.jubao, "alpha", 1f, 0f, 1f);
+                animator1.setDuration(1000);//时间1s
+                animator1.start();
                 AnimatorSet animatorSet = new AnimatorSet();  //组合动画
                 animatorSet.playTogether(translationX,translationY); //设置动画
                 animatorSet.setDuration(1000);  //设置动画时间
                 animatorSet.start(); //启动
 
+                ObjectAnimator ra_jubao = ObjectAnimator.ofFloat(holder.jubao,"rotation", 0f, 360f);
+                ra_jubao.setDuration(1000);
+                ra_jubao.start();
 
+                //复制链接
+                ObjectAnimator translationX2 = new ObjectAnimator().ofFloat(holder.fuzhi,"translationX",0,-140f);
+                ObjectAnimator translationY2 = new ObjectAnimator().ofFloat(holder.fuzhi,"translationY",0,0);
+                ObjectAnimator animator = ObjectAnimator.ofFloat(holder.fuzhi, "alpha", 1f, 0f, 1f);
+                animator.setDuration(1000);//时间1s
+                animator.start();
+                AnimatorSet animatorSet2 = new AnimatorSet();  //组合动画
+                animatorSet2.playTogether(translationX2,translationY2); //设置动画
+                animatorSet2.setDuration(1000);  //设置动画时间
+                animatorSet2.start(); //启动
+
+                ObjectAnimator ra_fuzhi = ObjectAnimator.ofFloat(holder.fuzhi,"rotation", 0f, 360f);
+                ra_fuzhi.setDuration(1000);
+                ra_fuzhi.start();
+
+                //屏蔽
+                ObjectAnimator translationX3 = new ObjectAnimator().ofFloat(holder.pingbi,"translationX",0,-210f);
+                ObjectAnimator translationY3 = new ObjectAnimator().ofFloat(holder.pingbi,"translationY",0,0);
+                ObjectAnimator animator2 = ObjectAnimator.ofFloat(holder.pingbi, "alpha", 1f, 0f, 1f);
+                animator2.setDuration(1000);//时间1s
+                animator2.start();
+                AnimatorSet animatorSet3 = new AnimatorSet();  //组合动画
+                animatorSet3.playTogether(translationX3,translationY3); //设置动画
+                animatorSet3.setDuration(1000);  //设置动画时间
+                animatorSet3.start(); //启动
+
+                ObjectAnimator ra_ping = ObjectAnimator.ofFloat(holder.pingbi,"rotation", 0f, 360f);
+                ra_ping.setDuration(1000);
+                ra_ping.start();
+            }
+        });
+
+
+        holder.jian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.pius.setVisibility(View.VISIBLE);
+                holder.jian.setVisibility(View.GONE);
+//                holder.jubao.setVisibility(View.GONE);
+//                holder.fuzhi.setVisibility(View.GONE);
+//                holder.pingbi.setVisibility(View.GONE);
+
+                //屏蔽
+                ObjectAnimator translationX3 = new ObjectAnimator().ofFloat(holder.pingbi,"translationX",-70f,0f);
+                ObjectAnimator translationY3 = new ObjectAnimator().ofFloat(holder.pingbi,"translationY",0,0);
+                ObjectAnimator animator = ObjectAnimator.ofFloat(holder.pingbi, "alpha", 1f, 0f);
+                animator.setDuration(1000);//时间1s
+                animator.start();
+                AnimatorSet animatorSet3 = new AnimatorSet();  //组合动画
+                animatorSet3.playTogether(translationX3,translationY3); //设置动画
+                animatorSet3.setDuration(1000);  //设置动画时间
+                animatorSet3.start(); //启动
+
+                ObjectAnimator ra_ping = ObjectAnimator.ofFloat(holder.pingbi,"rotation", 0f, 360f);
+                ra_ping.setDuration(1000);
+                ra_ping.start();
+
+
+                //复制链接
+                ObjectAnimator translationX2 = new ObjectAnimator().ofFloat(holder.fuzhi,"translationX",-140,0f);
+                ObjectAnimator translationY2 = new ObjectAnimator().ofFloat(holder.fuzhi,"translationY",0,0);
+                ObjectAnimator animator3 = ObjectAnimator.ofFloat(holder.fuzhi, "alpha", 1f, 0f);
+                animator3.setDuration(1000);//时间1s
+                animator3.start();
+                AnimatorSet animatorSet2 = new AnimatorSet();  //组合动画
+                animatorSet2.playTogether(translationX2,translationY2); //设置动画
+                animatorSet2.setDuration(1000);  //设置动画时间
+                animatorSet2.start(); //启动
+
+                ObjectAnimator ra_fuzhi = ObjectAnimator.ofFloat(holder.fuzhi,"rotation", 0f, 360f);
+                ra_fuzhi.setDuration(1000);
+                ra_fuzhi.start();
+
+                //举报
+                ObjectAnimator translationX = new ObjectAnimator().ofFloat(holder.jubao,"translationX",-210,0f);
+                ObjectAnimator translationY = new ObjectAnimator().ofFloat(holder.jubao,"translationY",0,0);
+                ObjectAnimator animator4 = ObjectAnimator.ofFloat(holder.jubao, "alpha", 1f, 0f);
+                animator4.setDuration(1000);//时间1s
+                animator4.start();
+                AnimatorSet animatorSet = new AnimatorSet();  //组合动画
+                animatorSet.playTogether(translationX,translationY); //设置动画
+                animatorSet.setDuration(1000);  //设置动画时间
+                animatorSet.start(); //启动
+
+                ObjectAnimator ra_jubao = ObjectAnimator.ofFloat(holder.jubao,"rotation", 0f, 360f);
+                ra_jubao.setDuration(1000);
+                ra_jubao.start();
 
 
             }
         });
-
 
 
     }
