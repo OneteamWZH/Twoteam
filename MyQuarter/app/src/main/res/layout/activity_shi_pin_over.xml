@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_shi_pin_over"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/timg"
+    android:orientation="vertical"
+    tools:context="weizhihui.bwie.com.myquarter.ShiPinOver">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="150dp">
+                <ImageView
+                    android:id="@+id/fan_over"
+                    android:src="@drawable/raw_1500019926"
+                    android:layout_width="35dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_height="35dp" />
+                <TextView
+                    android:id="@+id/over_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="150dp"
+                    android:text="Mc 跨足令"
+                    />
+                <ImageView
+                    android:id="@+id/over_zhuan"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="160dp"
+                    android:src="@drawable/raw_1499995160"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:layout_height="100dp">
+                <ImageView
+                    android:id="@+id/ovre_tu"
+                    android:layout_width="50dp"
+                    android:src="@drawable/touxiang"
+                    android:layout_marginLeft="35dp"
+                    android:layout_height="50dp" />
+                <RelativeLayout
+                    android:layout_marginLeft="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/ovre_fen"
+                        android:layout_width="wrap_content"
+                        android:text="18595447粉丝"
+                        android:textSize="15dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/ovre_guan"
+                        android:layout_width="wrap_content"
+                        android:text="|    15896000关注"
+                        android:layout_toRightOf="@+id/ovre_fen"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:id="@+id/ovre_guantu"
+                        android:layout_width="220dp"
+                        android:src="@drawable/gaun"
+                        android:layout_below="@+id/ovre_fen"
+                        android:layout_alignLeft="@+id/ovre_fen"
+                        android:layout_marginTop="25dp"
+                        android:layout_height="100dp" />
+                </RelativeLayout>
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:background="#fff"
+                android:id="@+id/duan_over"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

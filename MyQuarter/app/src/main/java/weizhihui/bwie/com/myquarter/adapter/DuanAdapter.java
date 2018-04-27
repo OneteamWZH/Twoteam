@@ -1,21 +1,14 @@
 package weizhihui.bwie.com.myquarter.adapter;
 
 import android.content.Context;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.facebook.drawee.backends.pipeline.Fresco;
-import com.facebook.drawee.controller.AbstractDraweeController;
-import com.facebook.drawee.view.SimpleDraweeView;
 import com.nostra13.universalimageloader.core.ImageLoader;
-
 import java.util.List;
-
 import weizhihui.bwie.com.myquarter.R;
 import weizhihui.bwie.com.myquarter.bean.DuanBean;
 
@@ -25,7 +18,7 @@ import weizhihui.bwie.com.myquarter.bean.DuanBean;
 
 public class DuanAdapter extends RecyclerView.Adapter<DuanAdapter.MyViewHolder> {
     private Context context;
-    private List<DuanBean.DataBean> data;
+     private List<DuanBean.DataBean> data;
 
     public DuanAdapter(Context context, List<DuanBean.DataBean> data) {
         this.context = context;
@@ -40,7 +33,7 @@ public class DuanAdapter extends RecyclerView.Adapter<DuanAdapter.MyViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(final MyViewHolder holder, int position) {
     holder.duanname.setText(data.get(position).getUser().getNickname());
         holder.duantime.setText(data.get(position).getCreateTime());
         holder.duancontent.setText(data.get(position).getContent());
@@ -51,6 +44,7 @@ public class DuanAdapter extends RecyclerView.Adapter<DuanAdapter.MyViewHolder> 
 //                .build();
 //        holder.duanimg.setController(build);
         ImageLoader.getInstance().displayImage(data.get(position).getUser().getIcon(),holder.duanimg);
+
     }
 
     @Override
@@ -67,6 +61,7 @@ public class DuanAdapter extends RecyclerView.Adapter<DuanAdapter.MyViewHolder> 
             duanname= (TextView) itemView.findViewById(R.id.duann_name);
             duantime= (TextView) itemView.findViewById(R.id.duan_time);
             duancontent= (TextView) itemView.findViewById(R.id.duan_cotent);
+
         }
     }
 }

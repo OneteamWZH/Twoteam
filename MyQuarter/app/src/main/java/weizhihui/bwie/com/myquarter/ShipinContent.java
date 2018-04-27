@@ -32,7 +32,7 @@ import static android.R.attr.name;
 
 public class ShipinContent extends AppCompatActivity {
     JCVideoPlayerStandard jcVideoPlayerStandard ;
-   private ImageView fanshi,zhuan;
+   private ImageView fanshi,zhuan,tt;
     private ShiPinDuanPresenter shiPinDuanPresenter;
     private RecyclerView duanrv;
     private List<ShipinDuanBean.DataBean> data1;
@@ -48,7 +48,7 @@ public class ShipinContent extends AppCompatActivity {
         fanshi= (ImageView) findViewById(R.id.fanshi);
         duanrv= (RecyclerView) findViewById(R.id.duanrv);
         zhuan= (ImageView) findViewById(R.id.zhuan);
-
+         tt= (ImageView) findViewById(R.id.tt);
         //布局管理器
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
         duanrv.setLayoutManager(linearLayoutManager);
@@ -67,6 +67,15 @@ public class ShipinContent extends AppCompatActivity {
                 UMImage image=new UMImage(ShipinContent.this,R.drawable.umeng_socialize_qq);
                 new ShareAction(ShipinContent.this).withMedia(image).setDisplayList(SHARE_MEDIA.SINA,SHARE_MEDIA.QQ,SHARE_MEDIA.WEIXIN)
                         .setCallback(umShareListener).open();
+            }
+        });
+        //点击头像
+        tt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            Intent intent=new Intent(ShipinContent.this,ShiPinOver.class);
+                startActivity(intent);
+
             }
         });
         initView();

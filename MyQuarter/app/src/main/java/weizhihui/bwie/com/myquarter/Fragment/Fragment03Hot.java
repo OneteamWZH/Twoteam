@@ -49,6 +49,9 @@ public class Fragment03Hot extends Fragment04 {
             @Override
             public void OnSuccess(ShiPinBean shiPinBean) {
                data = shiPinBean.getData();
+                for (int i = 0; i <data.size() ; i++) {
+                    int uid = data.get(i).getUid();
+                }
                 shiPinHotAdapter=new ShiPinHotAdapter(getActivity(), Fragment03Hot.this.data);
                 hotrv.setAdapter(shiPinHotAdapter);
             }
