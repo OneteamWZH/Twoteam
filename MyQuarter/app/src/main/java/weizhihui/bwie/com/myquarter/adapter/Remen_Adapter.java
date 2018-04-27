@@ -58,6 +58,12 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
         String nickname = (String) user.getNickname();
         String createTime = dataEntity.getCreateTime();
 
+
+        holder.name.setText(nickname);
+
+//        holder.time.setText(createTime);
+//        holder.cotent.setText("天气美美的，适合郊游");
+
         if(nickname!=null){
             holder.name.setText(nickname);
         }else{
@@ -65,9 +71,11 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
         }
 
 
+
         holder.time.setText(createTime);
         holder.cotent.setText("天气美美的，适合郊游");
         holder.jiecao.setUp("http://gslb.miaopai.com/stream/ed5HCfnhovu3tyIQAiv60Q__.mp4",holder.jiecao.SCREEN_LAYOUT_NORMAL,"");
+
 
         Uri uri = Uri.parse(icon);
         AbstractDraweeController build = Fresco.newDraweeControllerBuilder()
@@ -75,6 +83,9 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
                 .setTapToRetryEnabled(true)
                 .build();
         holder.img.setController(build);
+
+
+//        holder.jiecao.setUp("http://gslb.miaopai.com/stream/ed5HCfnhovu3tyIQAiv60Q__.mp4",holder.jiecao.SCREEN_LAYOUT_NORMAL,"");
 
         Uri uri5 = Uri.parse("res:///" + R.drawable.pingbi);
         AbstractDraweeController build5 = Fresco.newDraweeControllerBuilder()
@@ -89,6 +100,7 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
                 .setTapToRetryEnabled(true)
                 .build();
         holder.fuzhi.setController(build4);
+
 
         Uri uri3 = Uri.parse("res:///" + R.drawable.jubao);
         AbstractDraweeController build3 = Fresco.newDraweeControllerBuilder()
@@ -319,11 +331,15 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
             super(itemView);
 
             img = (SimpleDraweeView) itemView.findViewById(R.id.hot_img);
+
+          /*  pius = (SimpleDraweeView) itemView.findViewById(R.id.hot_pius);*/
+
             pius = (SimpleDraweeView) itemView.findViewById(R.id.hot_pius);
             jian = (SimpleDraweeView) itemView.findViewById(R.id.jian);
             jubao = (SimpleDraweeView) itemView.findViewById(R.id.jubao);
             fuzhi = (SimpleDraweeView) itemView.findViewById(R.id.fuzhi);
             pingbi = (SimpleDraweeView) itemView.findViewById(R.id.pingbi);
+
             name = (TextView) itemView.findViewById(R.id.hou_name);
             time = (TextView) itemView.findViewById(R.id.hou_time);
             cotent = (TextView) itemView.findViewById(R.id.hou_cotent);

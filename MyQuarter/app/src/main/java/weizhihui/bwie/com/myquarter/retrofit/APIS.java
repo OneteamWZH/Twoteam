@@ -14,6 +14,10 @@ public interface APIS {
      String register="quarter/register";
     //忘记密码
     String forgePwd="quarter/resetPass";
+    //https://www.zhaoapi.cn/quarter/resetPass   修改密码
+    String resetPass="quarter/resetPass";
+
+
     //上传头像
     String iconUp ="file/upload";
     //用户信息
