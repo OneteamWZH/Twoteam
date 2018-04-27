@@ -4,6 +4,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.net.Uri;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,7 +55,13 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
         String nickname = (String) user.getNickname();
         String createTime = dataEntity.getCreateTime();
 
-        holder.name.setText(nickname);
+        if(nickname!=null){
+            holder.name.setText(nickname);
+        }else{
+            holder.name.setText("天王盖地虎");
+        }
+
+
         holder.time.setText(createTime);
         holder.cotent.setText("天气美美的，适合郊游");
         holder.jiecao.setUp("http://gslb.miaopai.com/stream/ed5HCfnhovu3tyIQAiv60Q__.mp4",holder.jiecao.SCREEN_LAYOUT_NORMAL,"");
@@ -108,9 +115,7 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
             public void onClick(View v) {
                 holder.pius.setVisibility(View.GONE);
                 holder.jian.setVisibility(View.VISIBLE);
-//                holder.jubao.setVisibility(View.VISIBLE);
-//                holder.fuzhi.setVisibility(View.VISIBLE);
-//                holder.pingbi.setVisibility(View.VISIBLE);
+
 
                 //加号
                 ObjectAnimator ra = ObjectAnimator.ofFloat(holder.pius,"rotation", 0f, 360f);
@@ -170,9 +175,6 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
             public void onClick(View v) {
                 holder.pius.setVisibility(View.VISIBLE);
                 holder.jian.setVisibility(View.GONE);
-//                holder.jubao.setVisibility(View.GONE);
-//                holder.fuzhi.setVisibility(View.GONE);
-//                holder.pingbi.setVisibility(View.GONE);
 
                 //屏蔽
                 ObjectAnimator translationX3 = new ObjectAnimator().ofFloat(holder.pingbi,"translationX",-70f,0f);
@@ -224,6 +226,9 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
             }
         });
 
+        holder.comment.setLayoutManager(new LinearLayoutManager(context));
+        Comment_Adapter comment_adapter = new Comment_Adapter(context,list);
+        holder.comment.setAdapter(comment_adapter);
 
     }
 
