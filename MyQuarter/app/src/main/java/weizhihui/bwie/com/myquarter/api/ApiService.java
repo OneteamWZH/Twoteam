@@ -4,6 +4,7 @@ package weizhihui.bwie.com.myquarter.api;
 import io.reactivex.Flowable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
+import weizhihui.bwie.com.myquarter.bean.AttentionBean;
 import weizhihui.bwie.com.myquarter.bean.Carousel_Bean;
 import weizhihui.bwie.com.myquarter.bean.Remen_Bean;
 import weizhihui.bwie.com.myquarter.bean.ShiPinBean;
@@ -19,9 +20,9 @@ public interface ApiService {
     @GET("getAd")
     Flowable<Carousel_Bean> getCarousel();
     //获取热门视频的url
-
-
-
+    // 我的关注 https://www.zhaoapi.cn/ad/getAd
+  @GET("getAd")
+   Flowable<AttentionBean> getAtention();
     //获取视频的url
     //https://www.zhaoapi.cn/quarter/getJokes ?page=1&source=android&appVersion=0
     @GET("quarter/getVideos")

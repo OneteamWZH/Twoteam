@@ -1,6 +1,5 @@
 package weizhihui.bwie.com.myquarter.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -17,11 +16,10 @@ import com.bawei.swiperefreshlayoutlibrary.SwipyRefreshLayoutDirection;
 import java.util.List;
 
 import weizhihui.bwie.com.myquarter.R;
-import weizhihui.bwie.com.myquarter.ShipinContent;
 import weizhihui.bwie.com.myquarter.adapter.ShiPinHotAdapter;
 import weizhihui.bwie.com.myquarter.bean.ShiPinBean;
 import weizhihui.bwie.com.myquarter.presenter.ShiPinPresenter;
-import weizhihui.bwie.com.myquarter.view.IView.ShIPinIview;
+import weizhihui.bwie.com.myquarter.view.ShIPinIview;
 
 /**
  * Created by lenovo on 2018/4/25.

@@ -14,7 +14,7 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 import weizhihui.bwie.com.myquarter.adapter.ShiPinDuanAdapter;
 import weizhihui.bwie.com.myquarter.bean.ShipinDuanBean;
 import weizhihui.bwie.com.myquarter.presenter.ShiPinDuanPresenter;
-import weizhihui.bwie.com.myquarter.view.IView.ShiPinDuanIview;
+import weizhihui.bwie.com.myquarter.view.ShiPinDuanIview;
 
 import static android.R.attr.name;
 

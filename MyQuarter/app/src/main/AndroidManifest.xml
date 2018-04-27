@@ -3,10 +3,8 @@
     package="weizhihui.bwie.com.myquarter">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
@@ -43,16 +41,15 @@
         <activity android:name=".WangjiPwdActivity" />
         <activity android:name=".FinishActivity" />
         <activity android:name=".AttentionActivity" />
-
         <activity android:name=".VideoActivity" />
         <activity android:name=".DuanZiActivity" />
-
-        <activity android:name=".ShipinContent"></activity>
-        <activity android:name=".AttentionActivity"></activity>
-        <activity android:name=".JieCaoVideoActivity"
+        <activity android:name=".ShipinContent" />
+        <activity android:name=".AttentionActivity" />
+        <activity
+            android:name=".JieCaoVideoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait"></activity>
-
+            android:screenOrientation="portrait" />
+        <activity android:name=".ChildAttentionActivity"></activity>
     </application>
 
 </manifest>
