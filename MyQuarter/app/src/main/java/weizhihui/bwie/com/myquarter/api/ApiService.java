@@ -19,12 +19,7 @@ public interface ApiService {
 
     //https://www.zhaoapi.cn/quarter/getAd    首页轮播
     @GET("getAd")
-
-
-
     //获取热门视频的url
-
-
     Flowable<Carousel_Bean> getCarousel();
     //获取热门视频的url
     // 我的关注 https://www.zhaoapi.cn/ad/getAd
