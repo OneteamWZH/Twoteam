@@ -30,7 +30,11 @@ public class ElseLogin_Activity extends BaseActivity  implements LoginPresenter.
     EditText mTelid;
 //    密码
     @BindView(R.id.pwdid)
+<<<<<<< HEAD
     EditText mPwdid;
+=======
+     EditText pwdid;
+>>>>>>> 509686d4cea21770c646858d6d0b8c384b9f9166
 //    登陆
     @BindView(R.id.elselogin2id)
     Button mElselogin2id;

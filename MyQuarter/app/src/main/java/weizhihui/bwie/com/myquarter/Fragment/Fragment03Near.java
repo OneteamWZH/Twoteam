@@ -3,7 +3,6 @@ package weizhihui.bwie.com.myquarter.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
@@ -16,7 +15,7 @@ import weizhihui.bwie.com.myquarter.R;
 import weizhihui.bwie.com.myquarter.adapter.ShiPinHotAdapter;
 import weizhihui.bwie.com.myquarter.bean.ShiPinBean;
 import weizhihui.bwie.com.myquarter.presenter.ShiPinPresenter;
-import weizhihui.bwie.com.myquarter.view.IView.ShIPinIview;
+import weizhihui.bwie.com.myquarter.view.ShIPinIview;
 
 /**
  * Created by lenovo on 2018/4/25.
