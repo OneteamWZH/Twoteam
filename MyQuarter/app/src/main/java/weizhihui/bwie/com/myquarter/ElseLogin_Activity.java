@@ -53,7 +53,7 @@ public class ElseLogin_Activity extends BaseActivity implements LoginPresenter.L
                 finish();
             }
         });
-        //点击登录   游客登录  跳转到推荐页面
+        //      
         mElselogin2id.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +61,7 @@ public class ElseLogin_Activity extends BaseActivity implements LoginPresenter.L
                 startActivity(intent);
             }
         });
+        //点击登录   游客登录  跳转到推荐页面
         mYoukelogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,9 +103,9 @@ public class ElseLogin_Activity extends BaseActivity implements LoginPresenter.L
 
     public void initView() {
         mRegtelid = (TextView) findViewById(R.id.regtelid);
-        mLoginimgid = (ImageView) findViewById(R.id.loginimgid);
+        ImageView mLoginimgid = (ImageView) findViewById(R.id.loginimgid);
         mTelid = (EditText) findViewById(R.id.telid);
-        mPwdid = (EditText) findViewById(R.id.pwdid);
+       EditText mPwdid = (EditText) findViewById(R.id.pwdid);
         mElseloginid = (ImageView) findViewById(R.id.elseloginid);
         mWangjipwdid = (TextView) findViewById(R.id.wangjipwdid);
         mYoukelogin = (TextView) findViewById(R.id.youkelogin);

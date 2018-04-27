@@ -36,6 +36,7 @@ public class Carousel_Model {
                     @Override
                     public void onNext(Carousel_Bean carousel_bean) {
                         if (carousel_listener!=null){
+                            Log.i("出来",carousel_bean.getMsg());
                             carousel_listener.setCarousel_Listener(carousel_bean);
                         }
                     }

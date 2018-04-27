@@ -19,9 +19,15 @@ public interface ApiService {
     @GET("getAd")
 
 
+
     //获取热门视频的url
 
+
     Flowable<Carousel_Bean> getCarousel();
+    //获取热门视频的url
+
+
+
     //获取视频的url
     //https://www.zhaoapi.cn/quarter/getJokes ?page=1&source=android&appVersion=0
     @GET("quarter/getVideos")
