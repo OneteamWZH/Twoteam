@@ -14,9 +14,6 @@ public class Api {
 
 
 
-
-
-
     //https://www.zhaoapi.cn/quarter/getVideos?uid=1&type=1&page=1&source=android&appVersion=101
     public static final String Remen_url = "https://www.zhaoapi.cn/quarter/";
     //https://www.zhaoapi.cn/quarter/getJokes?page=1&source=android&appVersion=1

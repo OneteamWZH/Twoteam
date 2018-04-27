@@ -1,5 +1,7 @@
 package weizhihui.bwie.com.myquarter.adapter;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
@@ -77,14 +79,14 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
                 .setUri(uri5)
                 .setTapToRetryEnabled(true)
                 .build();
-        holder.pius.setController(build5);
+        holder.pingbi.setController(build5);
 
         Uri uri4 = Uri.parse("res:///" + R.drawable.fuzhi);
         AbstractDraweeController build4 = Fresco.newDraweeControllerBuilder()
                 .setUri(uri4)
                 .setTapToRetryEnabled(true)
                 .build();
-        holder.pius.setController(build4);
+        holder.fuzhi.setController(build4);
 
 
         Uri uri3 = Uri.parse("res:///" + R.drawable.jubao);
@@ -92,14 +94,14 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
                 .setUri(uri3)
                 .setTapToRetryEnabled(true)
                 .build();
-        holder.pius.setController(build3);
+        holder.jubao.setController(build3);
 
         Uri uri2 = Uri.parse("res:///" + R.drawable.jian);
         AbstractDraweeController build2 = Fresco.newDraweeControllerBuilder()
                 .setUri(uri2)
                 .setTapToRetryEnabled(true)
                 .build();
-        holder.pius.setController(build2);
+        holder.jian.setController(build2);
 
         Uri uri1 = Uri.parse("res:///" + R.drawable.jia);
         AbstractDraweeController build1 = Fresco.newDraweeControllerBuilder()
@@ -107,6 +109,8 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
                 .setTapToRetryEnabled(false)
                 .build();
         holder.pius.setController(build1);
+
+
 
         holder.pius.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,17 +123,13 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
 
 
 
-               /* //      旋转
-                PropertyValuesHolder propertyValuesHolder1 = PropertyValuesHolder.ofFloat("rotation", 0f, 360f);
-                //      x轴方向平移
-                PropertyValuesHolder propertyValuesHolder2 = PropertyValuesHolder.ofFloat("translationX", -200f);
-                //      y轴方向平移
-                PropertyValuesHolder propertyValuesHolder3 = PropertyValuesHolder.ofFloat("translationY", 0f, 0);
-                ObjectAnimator objectAnimator = ObjectAnimator.ofPropertyValuesHolder(holder.jian, propertyValuesHolder1, propertyValuesHolder3);
-                //      设置间隔时间
-                objectAnimator.setDuration(1000);
-                //      开始动画
-                objectAnimator.start();*/
+                ObjectAnimator translationX = new ObjectAnimator().ofFloat(holder.jian,"translationX",-70f);
+                ObjectAnimator translationY = new ObjectAnimator().ofFloat(holder.jian,"translationY",0,0);
+
+                AnimatorSet animatorSet = new AnimatorSet();  //组合动画
+                animatorSet.playTogether(translationX,translationY); //设置动画
+                animatorSet.setDuration(1000);  //设置动画时间
+                animatorSet.start(); //启动
 
 
 

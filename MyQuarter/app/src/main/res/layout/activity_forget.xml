@@ -3,9 +3,9 @@
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/reg_background"
     android:layout_height="match_parent"
-    tools:context="weizhihui.bwie.com.myquarter.Reg_Activity">
+    android:background="@drawable/reg_background"
+    tools:context="weizhihui.bwie.com.myquarter.ForgetActivity">
     <include layout="@layout/back_key"/>
 
     <TextView
@@ -26,6 +26,7 @@
         fresco:roundedCornerRadius="10dp"
         android:id="@+id/image"
         />
+
     <LinearLayout
         android:layout_marginTop="20dp"
         android:layout_below="@+id/image"
@@ -34,20 +35,21 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_width="230dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
+            />
             <EditText
-                android:id="@+id/reg_admin"
-                android:textSize="14sp"
-                android:hint="请输入手机号"
+                android:hint="86+ | 请输入手机号"
+                android:id="@+id/mobile"
                 android:textCursorDrawable="@drawable/edit_color"
-                android:textColorHint="#AAA"
-                android:layout_width="150dp"
+                android:textColorHint="#fff"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
@@ -57,13 +59,11 @@
             android:layout_height="wrap_content">
 
             <EditText
-
-                android:id="@+id/reg_pwd"
-                android:textSize="14sp"
-                android:hint="密码不能小于8位"
+                android:hint="请输入验证码"
+                android:id="@+id/password"
                 android:textCursorDrawable="@drawable/edit_color"
-                android:textColorHint="#AAA"
-                android:layout_width="150dp"
+                android:textColorHint="#fff"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
@@ -75,19 +75,30 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content">
         <Button
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:layout_centerInParent="true"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="注册"
+            android:text="下一步"
             android:textColor="#fff"
-            android:id="@+id/lregister"
+            android:id="@+id/next"
             android:background="@drawable/shape_btn"
             />
-
+        <TextView
+            android:layout_alignRight="@+id/login"
+            android:layout_alignParentRight="true"
+            android:textColor="#fff"
+            android:layout_below="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="忘记密码"
+            android:id="@+id/forgetpwd"
+            />
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/visitor_login"
         android:textSize="18sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
@@ -96,6 +107,5 @@
         android:layout_height="wrap_content"
         android:text="游客登录"
         android:textColor="#fff"
-        android:id="@+id/reg_visitor"
         />
 </RelativeLayout>
