@@ -15,7 +15,10 @@ import weizhihui.bwie.com.myquarter.bean.AttentionBean;
 import weizhihui.bwie.com.myquarter.presenter.AttentionPresenter;
 import weizhihui.bwie.com.myquarter.view.AttentionView;
 
-public class AttentionActivity extends AppCompatActivity implements AttentionView{
+//  我的关注
+
+public class AttentionActivity extends AppCompatActivity implements AttentionView {
+
 
     /**
      * < 返回

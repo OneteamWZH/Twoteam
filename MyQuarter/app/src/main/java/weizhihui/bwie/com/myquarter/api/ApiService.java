@@ -6,6 +6,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 import weizhihui.bwie.com.myquarter.bean.AttentionBean;
 import weizhihui.bwie.com.myquarter.bean.Carousel_Bean;
+import weizhihui.bwie.com.myquarter.bean.DuanBean;
 import weizhihui.bwie.com.myquarter.bean.Remen_Bean;
 import weizhihui.bwie.com.myquarter.bean.ShiPinBean;
 import weizhihui.bwie.com.myquarter.bean.ShipinDuanBean;
@@ -18,6 +19,12 @@ public interface ApiService {
 
     //https://www.zhaoapi.cn/quarter/getAd    首页轮播
     @GET("getAd")
+
+
+
+    //获取热门视频的url
+
+
     Flowable<Carousel_Bean> getCarousel();
     //获取热门视频的url
     // 我的关注 https://www.zhaoapi.cn/ad/getAd
@@ -36,6 +43,8 @@ public interface ApiService {
     //https://www.zhaoapi.cn/quarter/getJokes?page=1&source=android&appVersion=1
     @GET("quarter/getJokes")
     Flowable<ShipinDuanBean> getParmer03(@Query("page") String page,@Query("source") String android,@Query("appVersion") String appVersion);
-
+    //段子  https://www.zhaoapi.cn/quarter/getJokes?page=1&source=android&appVersion=101
+    @GET("quarter/getJokes")
+    Flowable<DuanBean> getParmer06(@Query("page") String page,@Query("source") String android,@Query("appVersion") String appVersion);
 
 }
