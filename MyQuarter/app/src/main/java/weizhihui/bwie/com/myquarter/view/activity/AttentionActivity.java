@@ -1,4 +1,4 @@
-package weizhihui.bwie.com.myquarter;
+package weizhihui.bwie.com.myquarter.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import weizhihui.bwie.com.myquarter.R;
 import weizhihui.bwie.com.myquarter.adapter.AttentionAdapter;
 import weizhihui.bwie.com.myquarter.bean.AttentionBean;
 import weizhihui.bwie.com.myquarter.presenter.AttentionPresenter;
@@ -61,6 +62,16 @@ import weizhihui.bwie.com.myquarter.view.AttentionView;
             //添加布局管理器
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
             mGrvid.setLayoutManager(linearLayoutManager);
+
+            //点击热门关注
+            mGremenid.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(AttentionActivity.this,RemenAttentionActivity.class);
+                    startActivity(intent);
+                }
+            });
+
         }
 
         private void initView() {

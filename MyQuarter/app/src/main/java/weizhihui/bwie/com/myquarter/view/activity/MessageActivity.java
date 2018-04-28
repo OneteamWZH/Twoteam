@@ -1,13 +1,15 @@
-package weizhihui.bwie.com.myquarter;
+package weizhihui.bwie.com.myquarter.view.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MyWorksActivity extends AppCompatActivity {
+import weizhihui.bwie.com.myquarter.R;
+
+public class MessageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_works);
+        setContentView(R.layout.activity_message);
     }
 }

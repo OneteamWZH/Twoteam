@@ -18,6 +18,13 @@ import com.hjm.bottomtabbar.BottomTabBar;
 import weizhihui.bwie.com.myquarter.Fragment.Fragment01;
 import weizhihui.bwie.com.myquarter.Fragment.Fragment02;
 import weizhihui.bwie.com.myquarter.Fragment.Fragment03;
+import weizhihui.bwie.com.myquarter.utils.UIUtils;
+import weizhihui.bwie.com.myquarter.view.activity.AttentionActivity;
+import weizhihui.bwie.com.myquarter.view.activity.MessageActivity;
+import weizhihui.bwie.com.myquarter.view.activity.MyCollectionActivity;
+import weizhihui.bwie.com.myquarter.view.activity.MyWorksActivity;
+import weizhihui.bwie.com.myquarter.view.activity.SearchFriendsActivity;
+import weizhihui.bwie.com.myquarter.view.activity.SettingActivity;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -50,10 +57,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mTongzhiId;
     private ImageView mFolderId;
     private ImageView mShezhiImg;
-
+    /**
+     * 夜间模式
+     */
+    private TextView mYeId;
+    private int theme = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //切换主题必须放在onCreate()之前
+
+        if (savedInstanceState == null) {
+//                如果么有
+            theme = UIUtils.getAppTheme(MainActivity.this);
+        } else {
+            theme = savedInstanceState.getInt("theme");
+        }
+//        可以设置主题的 方法 在oncreate之前调用
+        setTheme(theme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
@@ -118,11 +139,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(in);
             }
         });
-          //我的关注点击事件
+        //我的关注点击事件
         mGuanzhuId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-           Intent intent=new Intent(MainActivity.this,AttentionActivity.class);
+                Intent intent = new Intent(MainActivity.this, AttentionActivity.class);
                 startActivity(intent);
             }
         });
@@ -130,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mShoucangId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,MyCollectionActivity.class);
+                Intent intent = new Intent(MainActivity.this, MyCollectionActivity.class);
                 startActivity(intent);
             }
         });
@@ -138,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSousuoId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,SettingActivity.class);
+                Intent intent = new Intent(MainActivity.this, SearchFriendsActivity.class);
                 startActivity(intent);
             }
         });
@@ -146,27 +167,52 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTongzhiId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,MessageActivity.class);
+                Intent intent = new Intent(MainActivity.this, MessageActivity.class);
                 startActivity(intent);
             }
         });
         //点击我的作品
-       mFolderId.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Intent intent=new Intent(MainActivity.this,MyWorksActivity.class);
-               startActivity(intent);
-           }
-       });
+        mFolderId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MyWorksActivity.class);
+                startActivity(intent);
+            }
+        });
         //点击设置
         mShezhiImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,SettingActivity.class);
+                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
                 startActivity(intent);
 
             }
         });
+        //点击夜间模式
+        mYeId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UIUtils.switchAppTheme(MainActivity.this);
+                load();
+            }
+        });
+
+    }
+    //    切换之间的动画
+    public void load() {
+
+        Intent intent = getIntent();
+
+        overridePendingTransition(R.anim.in
+
+                , R.anim.out);//进入动画
+
+        finish();
+
+        overridePendingTransition(R.anim.in
+
+                , R.anim.out);
+        startActivity(intent);
 
     }
 
@@ -185,6 +231,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTongzhiId = (TextView) findViewById(R.id.Tongzhi_id);
         mFolderId = (ImageView) findViewById(R.id.Folder_id);
         mShezhiImg = (ImageView) findViewById(R.id.Shezhi_img);
+        mYeId = (TextView) findViewById(R.id.Ye_id);
     }
 
     @Override

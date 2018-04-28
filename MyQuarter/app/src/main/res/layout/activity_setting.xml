@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="weizhihui.bwie.com.myquarter.SettingActivity">
+    tools:context="weizhihui.bwie.com.myquarter.view.activity.SettingActivity">
     <include layout="@layout/sliding_layotu_top"/>
     <LinearLayout
         android:layout_marginLeft="20dp"

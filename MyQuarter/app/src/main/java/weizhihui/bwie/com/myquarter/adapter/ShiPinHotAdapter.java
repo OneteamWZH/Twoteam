@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import weizhihui.bwie.com.myquarter.R;
-import weizhihui.bwie.com.myquarter.ShipinContent;
+import weizhihui.bwie.com.myquarter.view.activity.ShipinContent;
 import weizhihui.bwie.com.myquarter.bean.ShiPinBean;
 
 /**

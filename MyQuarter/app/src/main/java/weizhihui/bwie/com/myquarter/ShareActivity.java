@@ -5,6 +5,9 @@ import android.widget.LinearLayout;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import weizhihui.bwie.com.myquarter.view.activity.BaseActivity;
+import weizhihui.bwie.com.myquarter.view.activity.DuanZiActivity;
+import weizhihui.bwie.com.myquarter.view.activity.VideoActivity;
 
 public class ShareActivity extends BaseActivity {
 

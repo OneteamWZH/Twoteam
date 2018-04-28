@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="weizhihui.bwie.com.myquarter.DuanZiActivity">
+    tools:context="weizhihui.bwie.com.myquarter.view.activity.DuanZiActivity">
     <include layout="@layout/publish_top_layout"/>
     <EditText
         android:id="@+id/publishEit"

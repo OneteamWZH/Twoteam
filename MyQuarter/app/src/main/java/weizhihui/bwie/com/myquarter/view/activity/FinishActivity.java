@@ -1,10 +1,13 @@
-package weizhihui.bwie.com.myquarter;
+package weizhihui.bwie.com.myquarter.view.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import weizhihui.bwie.com.myquarter.ElseLogin_Activity;
+import weizhihui.bwie.com.myquarter.R;
 
 public class FinishActivity extends AppCompatActivity {
 

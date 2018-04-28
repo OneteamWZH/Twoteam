@@ -1,4 +1,4 @@
-package weizhihui.bwie.com.myquarter;
+package weizhihui.bwie.com.myquarter.view.activity;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
+import weizhihui.bwie.com.myquarter.R;
 import weizhihui.bwie.com.myquarter.adapter.Remen_Adapter;
 import weizhihui.bwie.com.myquarter.bean.Remen_Bean;
 import weizhihui.bwie.com.myquarter.presenter.Remen_Presenter;

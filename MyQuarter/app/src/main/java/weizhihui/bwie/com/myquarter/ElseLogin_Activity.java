@@ -14,8 +14,10 @@ import java.util.Map;
 
 import butterknife.BindView;
 import weizhihui.bwie.com.myquarter.presenter.LoginPresenter;
+import weizhihui.bwie.com.myquarter.view.activity.BaseActivity;
+
 //  账号密码登录界面
-public class ElseLogin_Activity extends BaseActivity  implements LoginPresenter.LoginPresenterListener{
+public class ElseLogin_Activity extends BaseActivity implements LoginPresenter.LoginPresenterListener{
 
 
 

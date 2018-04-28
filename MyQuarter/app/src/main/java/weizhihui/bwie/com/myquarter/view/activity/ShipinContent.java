@@ -1,4 +1,4 @@
-package weizhihui.bwie.com.myquarter;
+package weizhihui.bwie.com.myquarter.view.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -20,13 +20,14 @@ import java.util.List;
 
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
+import weizhihui.bwie.com.myquarter.R;
 import weizhihui.bwie.com.myquarter.adapter.DuanAdapter;
 import weizhihui.bwie.com.myquarter.adapter.ShiPinDuanAdapter;
 import weizhihui.bwie.com.myquarter.bean.DuanBean;
 import weizhihui.bwie.com.myquarter.bean.ShipinDuanBean;
 import weizhihui.bwie.com.myquarter.presenter.DuanPresenter;
 import weizhihui.bwie.com.myquarter.presenter.ShiPinDuanPresenter;
-import weizhihui.bwie.com.myquarter.view.IView.DuanIview;
+import weizhihui.bwie.com.myquarter.view.DuanIview;
 
 import static android.R.attr.name;
 

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.OnClick;
 import weizhihui.bwie.com.myquarter.presenter.UpdatePresenter;
+import weizhihui.bwie.com.myquarter.view.activity.BaseActivity;
 
 //  修改密码的类
 public class UpdatePwdActivity extends BaseActivity implements UpdatePresenter.UpdatePresenterListener {

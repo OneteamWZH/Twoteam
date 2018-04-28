@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import java.util.List;
 
@@ -16,7 +15,7 @@ import weizhihui.bwie.com.myquarter.R;
 import weizhihui.bwie.com.myquarter.adapter.DuanAdapter;
 import weizhihui.bwie.com.myquarter.bean.DuanBean;
 import weizhihui.bwie.com.myquarter.presenter.DuanPresenter;
-import weizhihui.bwie.com.myquarter.view.IView.DuanIview;
+import weizhihui.bwie.com.myquarter.view.DuanIview;
 
 /**
  * Created by asus on 2018/4/16.

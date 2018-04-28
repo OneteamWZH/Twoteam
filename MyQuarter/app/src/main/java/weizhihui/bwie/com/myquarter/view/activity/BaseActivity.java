@@ -1,4 +1,4 @@
-package weizhihui.bwie.com.myquarter;
+package weizhihui.bwie.com.myquarter.view.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import butterknife.ButterKnife;
+import weizhihui.bwie.com.myquarter.R;
 
 /**
  * Created by QinQinBaoBei on 2018/1/22.

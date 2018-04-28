@@ -1,4 +1,4 @@
-package weizhihui.bwie.com.myquarter;
+package weizhihui.bwie.com.myquarter.view.activity;
 
 import android.net.Uri;
 import android.view.View;
@@ -8,6 +8,8 @@ import android.widget.LinearLayout;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
+
+import weizhihui.bwie.com.myquarter.R;
 
 public class VideoActivity  extends BaseActivity {
 

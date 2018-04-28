@@ -13,6 +13,7 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.OnClick;
 import weizhihui.bwie.com.myquarter.presenter.RegisterPresenter;
+import weizhihui.bwie.com.myquarter.view.activity.BaseActivity;
 
 //  注册账号页面
 public class Reg_Activity extends BaseActivity implements RegisterPresenter.RegisterPresenterListener {

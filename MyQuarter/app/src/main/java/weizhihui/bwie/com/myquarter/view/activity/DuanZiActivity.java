@@ -1,4 +1,4 @@
-package weizhihui.bwie.com.myquarter;
+package weizhihui.bwie.com.myquarter.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 import java.util.HashMap;
 import java.util.Map;
 
+import weizhihui.bwie.com.myquarter.R;
+import weizhihui.bwie.com.myquarter.ShareActivity;
 import weizhihui.bwie.com.myquarter.presenter.PublishPresenter;
 
 public class DuanZiActivity extends BaseActivity implements PublishPresenter.PublishPresenterListener {

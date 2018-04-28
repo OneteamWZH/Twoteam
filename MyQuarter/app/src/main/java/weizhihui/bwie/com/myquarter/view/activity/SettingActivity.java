@@ -1,4 +1,4 @@
-package weizhihui.bwie.com.myquarter;
+package weizhihui.bwie.com.myquarter.view.activity;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import weizhihui.bwie.com.myquarter.R;
 
 public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
 
