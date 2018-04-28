@@ -5,14 +5,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
-
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <uses-feature android:name="android.hardware.camera" />
@@ -44,16 +41,13 @@
         <activity android:name=".Login_Activity" />
         <activity android:name=".ElseLogin_Activity" />
         <activity android:name=".Reg_Activity" />
-
         <activity android:name=".view.activity.FinishActivity" />
         <activity android:name=".view.activity.AttentionActivity" />
         <activity android:name=".view.activity.VideoActivity" />
         <activity android:name=".view.activity.DuanZiActivity" />
         <activity android:name=".view.activity.ShipinContent" />
         <activity android:name=".view.activity.AttentionActivity" />
-        <activity android:name=".ShiPinOver"/>
-
-
+        <activity android:name=".ShiPinOver" />
         <activity android:name=".view.activity.ChildAttentionActivity" />
         <activity android:name=".view.activity.SettingActivity" />
         <activity android:name=".view.activity.MyWorksActivity" />
@@ -74,7 +68,7 @@
             android:exported="false"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="com.sina.weibo.sdk.share.WbShareTransActivity"
             android:launchMode="singleTask"
@@ -99,7 +93,6 @@
             </intent-filter>
         </activity>
 
-
         <!-- 分享编辑页 -->
         <activity
             android:name="com.umeng.socialize.editorpage.ShareActivity"
@@ -115,9 +108,8 @@
 
         <activity android:name=".view.activity.ChildAttentionActivity" />
         <activity android:name=".view.activity.AttentionActivity" />
-        <activity android:name=".view.activity.RemenAttentionActivity"></activity>
-
-
+        <activity android:name=".view.activity.RemenAttentionActivity" />
+        <activity android:name=".view.activity.MainFragment"></activity>
     </application>
 
 </manifest>
