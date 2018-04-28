@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
@@ -21,6 +22,7 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 import weizhihui.bwie.com.myquarter.R;
 import weizhihui.bwie.com.myquarter.bean.Remen_Bean;
 
+
 /**
  * Created by asus on 2018/4/26.
  */
@@ -29,6 +31,7 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
 
     private Context context;
     private List<Remen_Bean.DataEntity> list;
+    private Ada a;
 
     public Remen_Adapter(Context context, List<Remen_Bean.DataEntity> list) {
         this.context = context;
@@ -39,7 +42,7 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
     public Remen_Adapter.Ada onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View inflate = LayoutInflater.from(context).inflate(R.layout.item_video, parent, false);
-        Ada a = new Ada(inflate);
+        a = new Ada(inflate);
 
         return a;
     }
@@ -242,6 +245,65 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
         Comment_Adapter comment_adapter = new Comment_Adapter(context,list);
         holder.comment.setAdapter(comment_adapter);
 
+        holder.xin1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.xin2.setVisibility(View.VISIBLE);
+                holder.xin1.setVisibility(View.INVISIBLE);
+                String num = holder.num.getText().toString();
+                int i = Integer.parseInt(num);
+                i++;
+                holder.num.setText(i+"");
+
+
+            }
+        });
+        holder.xin2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.xin1.setVisibility(View.VISIBLE);
+                holder.xin2.setVisibility(View.INVISIBLE);
+                String num = holder.num.getText().toString();
+                int i = Integer.parseInt(num);
+                i--;
+                holder.num.setText(i+"");
+            }
+        });
+        holder.wujiaoxing1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.wujiaoxing1.setVisibility(View.INVISIBLE);
+                holder.wujiaoxing2.setVisibility(View.VISIBLE);
+                String num_wujiaoxing = holder.num_wujiaoxing.getText().toString();
+                int i = Integer.parseInt(num_wujiaoxing);
+                i++;
+                holder.num_wujiaoxing.setText(i+"");
+
+            }
+        });
+        holder.wujiaoxing2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.wujiaoxing2.setVisibility(View.INVISIBLE);
+                holder.wujiaoxing1.setVisibility(View.VISIBLE);
+                String num_wujiaoxing = holder.num_wujiaoxing.getText().toString();
+                int i = Integer.parseInt(num_wujiaoxing);
+                i--;
+                holder.num_wujiaoxing.setText(i+"");
+            }
+        });
+
+
+        holder.zhuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+
+
+
     }
 
 
@@ -254,13 +316,16 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
 
     }
 
+
+
     public class Ada extends RecyclerView.ViewHolder{
 
         private final SimpleDraweeView img;
         private final SimpleDraweeView pius,jian,fuzhi,pingbi,jubao;
-        private final TextView name,time,cotent;
+        private final TextView name,time,cotent,num,num_zhuna,num_wujiaoxing;
         private final JCVideoPlayerStandard jiecao;
         private final RecyclerView comment;
+        private final ImageView xin1,xin2,wujiaoxing1,wujiaoxing2,zhuan,pinglu;
 
         public Ada(View itemView) {
             super(itemView);
@@ -280,7 +345,21 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
             cotent = (TextView) itemView.findViewById(R.id.hou_cotent);
             jiecao = (JCVideoPlayerStandard) itemView.findViewById(R.id.jiecao_Player);
             comment = (RecyclerView) itemView.findViewById(R.id.comment_RLV);
+            xin1 = (ImageView) itemView.findViewById(R.id.xin1);
+            xin2 = (ImageView) itemView.findViewById(R.id.xin2);
+            wujiaoxing1 = (ImageView) itemView.findViewById(R.id.wujiaoxing1);
+            wujiaoxing2 = (ImageView) itemView.findViewById(R.id.wujiaoxing2);
+            zhuan = (ImageView) itemView.findViewById(R.id.zhuan);
+            pinglu = (ImageView) itemView.findViewById(R.id.pinglun);
+            num = (TextView) itemView.findViewById(R.id.num);
+            num_zhuna = (TextView) itemView.findViewById(R.id.num_zhuan);
+            num_wujiaoxing = (TextView) itemView.findViewById(R.id.num_wujiaoxing);
+
+
 
         }
     }
+
+
+
 }

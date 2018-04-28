@@ -22,4 +22,6 @@ public class Api {
     //段子  https://www.zhaoapi.cn/quarter/getJokes?page=1&source=android&appVersion=101
     public static  final String duan_URL="https://www.zhaoapi.cn/";
 
+    //  发布段子
+    public static String add_content  ="https://www.zhaoapi.cn/quarter/publishJoke";
 }

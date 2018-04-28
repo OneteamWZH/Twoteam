@@ -13,6 +13,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import butterknife.BindView;
 import butterknife.OnClick;
 import weizhihui.bwie.com.myquarter.presenter.ForgetPresenter;
+import weizhihui.bwie.com.myquarter.view.activity.BaseActivity;
 
 //  点击忘记密码跳转来的
 public class ForgetActivity extends BaseActivity implements ForgetPresenter.ForgetPresenterListener{

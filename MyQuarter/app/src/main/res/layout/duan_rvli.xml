@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:layout_height="wrap_content">
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/re_id"
         >
@@ -56,61 +55,13 @@
             android:textColor="@color/colorAccent"
             android:id="@+id/duan_cotent"
             />
-
-
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:id="@+id/hot_pius01"
-            fresco:roundAsCircle="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="30px"
-            android:layout_marginRight="30px"
-            android:visibility="visible"
-            />
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:id="@+id/jian"
-            fresco:roundAsCircle="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="30px"
-            android:layout_marginRight="30px"
-            android:visibility="gone"
-            />
-
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:id="@+id/jubao01"
-            fresco:roundAsCircle="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="30px"
-            android:layout_marginRight="30px"
-            android:visibility="gone"
-            />
-
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:id="@+id/fuzhi01"
-            fresco:roundAsCircle="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="30px"
-            android:layout_marginRight="30px"
-            android:visibility="gone"
-            />
-
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:id="@+id/pingbi01"
-            fresco:roundAsCircle="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="30px"
-            android:layout_marginRight="30px"
-            android:visibility="gone"
-            />
-
+        <weizhihui.bwie.com.myquarter.CustomerView
+            android:layout_width="match_parent"
+            android:layout_marginTop="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
     </RelativeLayout>
+
+
 </LinearLayout>

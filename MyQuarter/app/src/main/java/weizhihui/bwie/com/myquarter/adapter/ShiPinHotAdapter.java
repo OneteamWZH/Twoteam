@@ -6,14 +6,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import weizhihui.bwie.com.myquarter.R;
-import weizhihui.bwie.com.myquarter.ShipinContent;
+import weizhihui.bwie.com.myquarter.view.activity.ShipinContent;
 import weizhihui.bwie.com.myquarter.bean.ShiPinBean;
 
 /**
@@ -23,6 +26,8 @@ import weizhihui.bwie.com.myquarter.bean.ShiPinBean;
 public class ShiPinHotAdapter extends RecyclerView.Adapter<ShiPinHotAdapter.MyViewHolder> {
     private Context context;
     private List<ShiPinBean.DataBean> data ;
+    int itemWidth;
+    private final ArrayList<Object> heightList;
     /*private OnItimeClickListener mlistener;
     public void setOnItimeClickListener(OnItimeClickListener onItimeClickListener){
         mlistener=onItimeClickListener;
@@ -31,6 +36,19 @@ public class ShiPinHotAdapter extends RecyclerView.Adapter<ShiPinHotAdapter.MyVi
     public ShiPinHotAdapter(Context context, List<ShiPinBean.DataBean> data) {
         this.context = context;
         this.data = data;
+        WindowManager wm = (WindowManager) context
+                .getSystemService(Context.WINDOW_SERVICE);
+
+
+        int width =wm.getDefaultDisplay().getWidth();
+
+        itemWidth = width/2;
+        //记录为每个控件产生的随机高度,避免滑回到顶部出现空白
+        heightList = new ArrayList<>();
+        for (int i = 0; i < data.size(); i++) {
+            int height = new Random().nextInt(200) + 100;//[100,300)的随机数
+            heightList.add(height);
+        }
     }
 
     @Override

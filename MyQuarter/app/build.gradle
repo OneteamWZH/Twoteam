@@ -96,11 +96,9 @@ dependencies {
     compile files('libs/umeng_social_shareboard.jar')
     compile files('libs/umeng_social_shareview.jar')
     compile files('libs/umeng_social_tool.jar')
+
     //视频播放
-
     compile 'com.getbase:floatingactionbutton:1.10.1'
-
-    //相机
-    compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.kogitune:pre-lollipop-activity-transition:0.0.1'
+
 }

@@ -7,8 +7,9 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import weizhihui.bwie.com.myquarter.view.activity.BaseActivity;
 
-public class Login_Activity extends  BaseActivity  {
+public class Login_Activity extends BaseActivity {
     @BindView(R.id.ElseLogin)
     TextView ElseLogin;
     @BindView(R.id.hui)

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MyQuarter</string>
+    <string name="quanxuan">全选</string>
+    <string name="shanchu">删除</string>
 </resources>
