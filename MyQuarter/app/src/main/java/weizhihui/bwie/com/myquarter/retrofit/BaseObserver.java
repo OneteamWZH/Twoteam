@@ -1,6 +1,7 @@
 package weizhihui.bwie.com.myquarter.retrofit;
 
 import com.google.gson.Gson;
+import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -8,7 +9,6 @@ import java.net.SocketException;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
-import retrofit2.HttpException;
 
 public abstract class BaseObserver<T> implements Observer<String> {
 

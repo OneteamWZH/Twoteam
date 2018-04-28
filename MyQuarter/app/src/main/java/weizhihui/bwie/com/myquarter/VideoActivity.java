@@ -2,18 +2,13 @@ package weizhihui.bwie.com.myquarter;
 
 import android.net.Uri;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
 
-public class VideoActivity  extends BaseActivity {
+public class VideoActivity extends BaseActivity {
 
-
-    private LinearLayout backToShare;
-    private ImageView goToPhoto;
 
     @Override
     protected int getRootView() {
@@ -22,8 +17,6 @@ public class VideoActivity  extends BaseActivity {
 
     @Override
     protected void initView() {
-        backToShare = (LinearLayout) findViewById(R.id.backToShare);
-        goToPhoto = (ImageView) findViewById(R.id.goToPhoto);
 
     }
 
