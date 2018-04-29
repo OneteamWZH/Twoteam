@@ -14,7 +14,13 @@
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- 必须的权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -106,9 +112,19 @@
             android:name="UMENG_CHANNEL"
             android:value="Channel ID" />
 
+
         <activity android:name=".view.activity.ChildAttentionActivity" />
         <activity android:name=".view.activity.AttentionActivity" />
         <activity android:name=".view.activity.RemenAttentionActivity" />
+
+
+        <activity android:name=".view.activity.RemenAttentionActivity" />
+        <activity android:name=".SelectPicActivity" />
+        <activity android:name=".CameraActivity" />
+        <activity android:name=".PreviewPicActivity" />
+        <activity android:name=".RecordingActivity" />
+        <activity android:name=".ImageEditActivity" />
+        <activity android:name=".QuarterPublishActivity"></activity>
 
     </application>
 
