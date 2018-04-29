@@ -109,7 +109,7 @@
         <activity android:name=".view.activity.ChildAttentionActivity" />
         <activity android:name=".view.activity.AttentionActivity" />
         <activity android:name=".view.activity.RemenAttentionActivity" />
-        <activity android:name=".view.activity.MainFragment"></activity>
+
     </application>
 
 </manifest>
