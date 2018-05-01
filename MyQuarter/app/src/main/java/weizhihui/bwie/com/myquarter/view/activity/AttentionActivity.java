@@ -16,11 +16,7 @@ import weizhihui.bwie.com.myquarter.bean.AttentionBean;
 import weizhihui.bwie.com.myquarter.presenter.AttentionPresenter;
 import weizhihui.bwie.com.myquarter.view.AttentionView;
 
-//  我的关注
-
-
-
-
+    //  我的关注
     public class AttentionActivity extends AppCompatActivity implements AttentionView {
 
         /**
@@ -49,14 +45,7 @@ import weizhihui.bwie.com.myquarter.view.AttentionView;
                     finish();
                 }
             });
-            //点击热门关注  展示热门关注的页面
-            mGremenid.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
 
-
-                }
-            });
             AttentionPresenter attentionPresenter = new AttentionPresenter(this);
             attentionPresenter.getAttentionPresenter();
             //添加布局管理器
