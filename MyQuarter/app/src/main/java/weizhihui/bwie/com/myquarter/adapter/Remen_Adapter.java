@@ -340,7 +340,7 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
 
             name = (TextView) itemView.findViewById(R.id.hou_name);
             time = (TextView) itemView.findViewById(R.id.hou_time);
-            cotent = (TextView) itemView.findViewById(R.id.hou_cotent);
+            cotent = (TextView)itemView.findViewById(R.id.hou_cotent);
             jiecao = (JCVideoPlayerStandard) itemView.findViewById(R.id.jiecao_Player);
             comment = (RecyclerView) itemView.findViewById(R.id.comment_RLV);
             xin1 = (ImageView) itemView.findViewById(R.id.xin1);

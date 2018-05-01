@@ -9,7 +9,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 import weizhihui.bwie.com.myquarter.interceptor.InterceptorPost;
 
 public class RetrofitManager {
@@ -23,7 +23,7 @@ public class RetrofitManager {
     public static  ApiService  apiService = new Retrofit.Builder()
             .baseUrl("https://www.zhaoapi.cn/")
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
             .create(ApiService.class);

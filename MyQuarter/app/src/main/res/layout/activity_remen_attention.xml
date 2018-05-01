@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_remen_attention"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="weizhihui.bwie.com.myquarter.view.activity.RemenAttentionActivity">
 
     <RelativeLayout
@@ -12,6 +14,7 @@
         android:background="#1E90FF"
         >
         <TextView
+            android:id="@+id/ReFinishid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="取消"
@@ -46,7 +49,8 @@
                android:layout_height="wrap_content"
                android:hint="输入关键字"
                android:textSize="12sp"
-
+               android:background="@null"
+               android:padding="10dp"
                android:layout_centerInParent="true"
                />
             <ImageView
@@ -58,4 +62,17 @@
         </LinearLayout>
     </RelativeLayout>
 
-</RelativeLayout>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/Retabid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="scrollable"
+        app:tabTextAppearance="@android:style/TextAppearance.Large"
+         app:tabIndicatorColor="#1E90FF"
+        app:tabSelectedTextColor="#1E90FF"
+        />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/Repagerid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
