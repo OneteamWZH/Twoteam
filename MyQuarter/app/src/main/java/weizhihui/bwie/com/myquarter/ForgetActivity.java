@@ -30,8 +30,7 @@ public class ForgetActivity extends BaseActivity implements ForgetPresenter.Forg
     LinearLayout mLinear;
     @BindView(R.id.next)
     Button mNext;
-    @BindView(R.id.forgetpwd)
-    TextView mForgetpwd;
+
     @BindView(R.id.relative)
     RelativeLayout mRelative;
     @BindView(R.id.visitor_login)
