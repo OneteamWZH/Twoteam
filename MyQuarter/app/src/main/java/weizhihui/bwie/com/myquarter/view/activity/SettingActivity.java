@@ -1,18 +1,27 @@
 package weizhihui.bwie.com.myquarter.view.activity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.umeng.analytics.MobclickAgent;
 
 import weizhihui.bwie.com.myquarter.R;
+import weizhihui.bwie.com.myquarter.bean.VersionBean;
+import weizhihui.bwie.com.myquarter.presenter.VersionPresenter;
+import weizhihui.bwie.com.myquarter.utils.OkHttp3Utils;
+import weizhihui.bwie.com.myquarter.view.VersionView;
 
-public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
+public class SettingActivity extends AppCompatActivity implements View.OnClickListener,VersionView {
 
     /**
      * 版本号
@@ -22,7 +31,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
      * 退出登录
      */
     private Button mUnLogin;
-    private int versionCode;
+    private String versionCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +41,17 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
         String appVersionName = getAppVersionName(this);
         mVersionCodeid.setText(appVersionName);
+
+        VersionPresenter versionPresenter=new VersionPresenter(this);
+        versionPresenter.getVersionPresenter();
+    }
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 
     private void initView() {
@@ -85,5 +105,43 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
             Log.e("VersionInfo", "Exception", e);
         }
         return versionName;
+    }
+
+    @Override
+    public void onSuccess(VersionBean versionBean) {
+        versionCode= versionBean.getData().getVersionCode();
+        Log.i("code",versionCode);
+        final String apkUrl = versionBean.getData().getApkUrl();
+        Log.d("ccccc", apkUrl);
+        try {
+            int versionCode1 = getVersionCode();
+            int i = Integer.parseInt(versionCode);
+            if (i>versionCode1){
+                AlertDialog.Builder builder = new AlertDialog.Builder(SettingActivity.this);
+                builder.setTitle("版本更新")
+                        .setMessage("更新新的版本")
+                        .setCancelable(true) //点击对话框以外的区域是否让对话框消
+                        .setPositiveButton("更新版本", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(SettingActivity.this, "你点击了更新版本", Toast.LENGTH_SHORT).show();
+                                OkHttp3Utils.download(SettingActivity.this, apkUrl, "E:\\version-master");
+
+                                dialog.dismiss();
+                            }
+                        }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(SettingActivity.this, "取消", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                }).create().show();
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 }

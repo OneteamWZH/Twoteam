@@ -84,17 +84,7 @@
             android:id="@+id/next"
             android:background="@drawable/shape_btn"
             />
-        <TextView
-            android:layout_alignRight="@+id/login"
-            android:layout_alignParentRight="true"
-            android:textColor="#fff"
-            android:layout_below="@+id/login"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content"
-            android:text="忘记密码"
-            android:id="@+id/forgetpwd"
-            />
+
     </RelativeLayout>
 
     <TextView
