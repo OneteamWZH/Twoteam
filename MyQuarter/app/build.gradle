@@ -17,6 +17,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -33,17 +38,17 @@ dependencies {
     compile 'com.youth.banner:banner:1.4.9'
     //okhttp3
     /*compile 'com.squareup.okhttp3:okhttp:3.9.1'
-    compile 'com.squareup.okio:okio:1.13.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'*/
+                compile 'com.squareup.okio:okio:1.13.0'
+                compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'*/
     /*//gson
-    compile 'com.google.code.gson:gson:2.2.4'*/
+                compile 'com.google.code.gson:gson:2.2.4'*/
     //加载图片Fresco
     compile 'com.facebook.fresco:fresco:0.12.0'
     // 支持 GIF 动图，需要添加
     compile 'com.facebook.fresco:animated-gif:0.12.0'
     // 支持 WebP （静态图+动图），需要添加
     /* compile 'com.facebook.fresco:animated-webp:0.12.0'
-    compile 'com.facebook.fresco:webpsupport:0.12.0'*/
+                compile 'com.facebook.fresco:webpsupport:0.12.0'*/
     // 仅支持 WebP 静态图，需要添加
     /* compile 'com.facebook.fresco:webpsupport:0.12.0'*/
     //picasso
@@ -96,9 +101,8 @@ dependencies {
     compile files('libs/umeng_social_shareboard.jar')
     compile files('libs/umeng_social_shareview.jar')
     compile files('libs/umeng_social_tool.jar')
-
     //视频播放
     compile 'com.getbase:floatingactionbutton:1.10.1'
     compile 'com.kogitune:pre-lollipop-activity-transition:0.0.1'
-
+    compile files('libs/open_sdk_r5990_lite.jar')
 }

@@ -68,34 +68,6 @@
         </LinearLayout>
 
     </LinearLayout>
-    <RelativeLayout
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/linear"
-        android:id="@+id/relative"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content">
-        <Button
-            android:layout_marginTop="20dp"
-            android:layout_centerInParent="true"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:text="下一步"
-            android:textColor="#fff"
-            android:id="@+id/next"
-            android:background="@drawable/shape_btn"
-            />
-        <TextView
-            android:layout_alignRight="@+id/login"
-            android:layout_alignParentRight="true"
-            android:textColor="#fff"
-            android:layout_below="@+id/login"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content"
-            android:text="忘记密码"
-            android:id="@+id/forgetpwd"
-            />
-    </RelativeLayout>
 
     <TextView
         android:id="@+id/visitor_login"
@@ -108,4 +80,27 @@
         android:text="游客登录"
         android:textColor="#fff"
         />
-</RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear"
+        android:layout_centerHorizontal="true">
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="下一步"
+            android:textColor="#fff"
+            android:id="@+id/next"
+            android:background="@drawable/shape_btn"
+            />
+
+
+    </RelativeLayout>
+
+
+    </RelativeLayout>
+

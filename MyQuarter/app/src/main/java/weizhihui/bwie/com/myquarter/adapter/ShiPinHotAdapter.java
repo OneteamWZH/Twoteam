@@ -16,8 +16,8 @@ import java.util.List;
 import java.util.Random;
 
 import weizhihui.bwie.com.myquarter.R;
-import weizhihui.bwie.com.myquarter.view.activity.ShipinContent;
 import weizhihui.bwie.com.myquarter.bean.ShiPinBean;
+import weizhihui.bwie.com.myquarter.view.activity.ShipinContent;
 
 /**
  * Created by lenovo on 2018/4/25.
@@ -50,7 +50,6 @@ public class ShiPinHotAdapter extends RecyclerView.Adapter<ShiPinHotAdapter.MyVi
             heightList.add(height);
         }
     }
-
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(context).inflate(R.layout.frag03rvchil01,parent,false);

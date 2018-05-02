@@ -24,4 +24,6 @@ public class Api {
 
     //  发布段子
     public static String add_content  ="https://www.zhaoapi.cn/quarter/publishJoke";
+    //版本更新
+   public static String Version_Url="https://www.zhaoapi.cn/quarter/";
 }

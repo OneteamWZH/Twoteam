@@ -128,13 +128,10 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
         holder.pius.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                holder.pius.setVisibility(View.GONE);
-                holder.jian.setVisibility(View.VISIBLE);
-
 
                 //加号
                 ObjectAnimator ra = ObjectAnimator.ofFloat(holder.pius,"rotation", 0f, 360f);
-                ra.setDuration(1000);
+                ra.setDuration(2000);
                 ra.start();
 
                 //举报
@@ -181,6 +178,10 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
                 ObjectAnimator ra_ping = ObjectAnimator.ofFloat(holder.pingbi,"rotation", 0f, 360f);
                 ra_ping.setDuration(1000);
                 ra_ping.start();
+                holder.pius.setVisibility(View.GONE);
+                holder.jian.setVisibility(View.VISIBLE);
+
+
             }
         });
 
@@ -188,8 +189,11 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
         holder.jian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                holder.pius.setVisibility(View.VISIBLE);
-                holder.jian.setVisibility(View.GONE);
+
+
+                ObjectAnimator ra_ping = ObjectAnimator.ofFloat(holder.jian,"rotation", 0f, 360f);
+                ra_ping.setDuration(1000);
+                ra_ping.start();
 
                 //屏蔽
                 ObjectAnimator translationX3 = new ObjectAnimator().ofFloat(holder.pingbi,"translationX",-70f,0f);
@@ -201,11 +205,6 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
                 animatorSet3.playTogether(translationX3,translationY3); //设置动画
                 animatorSet3.setDuration(1000);  //设置动画时间
                 animatorSet3.start(); //启动
-
-                ObjectAnimator ra_ping = ObjectAnimator.ofFloat(holder.pingbi,"rotation", 0f, 360f);
-                ra_ping.setDuration(1000);
-                ra_ping.start();
-
 
                 //复制链接
                 ObjectAnimator translationX2 = new ObjectAnimator().ofFloat(holder.fuzhi,"translationX",-140,0f);
@@ -237,6 +236,8 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
                 ra_jubao.setDuration(1000);
                 ra_jubao.start();
 
+                holder.pius.setVisibility(View.VISIBLE);
+                holder.jian.setVisibility(View.GONE);
 
             }
         });
@@ -307,9 +308,6 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
     }
 
 
-
-
-
     @Override
     public int getItemCount() {
         return list.size();
@@ -342,7 +340,7 @@ public class Remen_Adapter extends RecyclerView.Adapter<Remen_Adapter.Ada>{
 
             name = (TextView) itemView.findViewById(R.id.hou_name);
             time = (TextView) itemView.findViewById(R.id.hou_time);
-            cotent = (TextView) itemView.findViewById(R.id.hou_cotent);
+            cotent = (TextView)itemView.findViewById(R.id.hou_cotent);
             jiecao = (JCVideoPlayerStandard) itemView.findViewById(R.id.jiecao_Player);
             comment = (RecyclerView) itemView.findViewById(R.id.comment_RLV);
             xin1 = (ImageView) itemView.findViewById(R.id.xin1);

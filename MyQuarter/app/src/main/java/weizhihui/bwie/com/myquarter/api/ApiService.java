@@ -22,6 +22,7 @@ import weizhihui.bwie.com.myquarter.bean.DuanBean;
 import weizhihui.bwie.com.myquarter.bean.Remen_Bean;
 import weizhihui.bwie.com.myquarter.bean.ShiPinBean;
 import weizhihui.bwie.com.myquarter.bean.ShipinDuanBean;
+import weizhihui.bwie.com.myquarter.bean.VersionBean;
 
 /**
  * Created by asus on 2018/4/16.
@@ -53,7 +54,11 @@ public interface ApiService {
     //段子  https://www.zhaoapi.cn/quarter/getJokes?page=1&source=android&appVersion=101
     @GET("quarter/getJokes")
     Flowable<DuanBean> getParmer06(@Query("page") String page,@Query("source") String android,@Query("appVersion") String appVersion);
-    /**
+    @GET("getVersion")
+    Flowable<VersionBean> getVersion();
+
+
+ /**
      * Get基本请求,这里从Call改为Observable被观察者
      *
      * @param url
