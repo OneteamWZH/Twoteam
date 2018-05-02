@@ -16,7 +16,7 @@
 
         />
     <TextView
-        android:id="@+id/finishtelid"
+        android:id="@+id/finishtelid1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="已有账号"
