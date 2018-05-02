@@ -112,7 +112,7 @@ public class QuarterPublishActivity extends AppCompatActivity {
             map.put("token",token); // ?source=android&appVersion=101
             map.put("source","android");
             map.put("appVersion","101");
-
+//          拼接参数
             String oldUrl = "https://www.zhaoapi.cn/quarter/publishVideo";
             StringBuilder stringBuilder = new StringBuilder();//创建一个stringBuilder
             stringBuilder.append(oldUrl);

@@ -108,7 +108,7 @@ public class PreviewPicActivity extends AppCompatActivity {
             }
         });
 
-        // 过渡动画
+        // 过渡动画+++
         if (mPosition == 0) {// position是0时，onPageSelected不会触发
             List<ImageView> imageViews = Madapter.getmViews();
             final ImageView imageView = imageViews.get(mPosition % VIEW_SIZE);
